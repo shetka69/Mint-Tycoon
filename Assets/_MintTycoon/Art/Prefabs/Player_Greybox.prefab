@@ -101,6 +101,8 @@ GameObject:
   - component: {fileID: 8200182387400722284}
   - component: {fileID: 541285501462209408}
   - component: {fileID: 2508527970766316535}
+  - component: {fileID: 5697745946253198020}
+  - component: {fileID: 6315054289268356432}
   m_Layer: 0
   m_Name: Player_Greybox
   m_TagString: Untagged
@@ -123,6 +125,7 @@ Transform:
   m_Children:
   - {fileID: 5510552044915858496}
   - {fileID: 5390529349286585113}
+  - {fileID: 4362389116831788093}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!143 &541285501462209408
@@ -160,12 +163,78 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: faf30fe89ca66498285d4531acec00ca, type: 3}
-  m_Name: 
+  m_Name:
   m_EditorClassIdentifier: MintTycoon.Runtime::MintTycoon.Player.PlayerMovement
   joystick: {fileID: 0}
   movementReference: {fileID: 0}
   moveSpeed: 5
   turnSpeed: 720
+--- !u!114 &5697745946253198020
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4250668051082455769}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c4925e617826842dbbf1d1506501e9e1, type: 3}
+  m_Name:
+  m_EditorClassIdentifier: MintTycoon.Runtime::MintTycoon.Inventory.PlayerInventory
+  capacity: 12
+  resourceType: 0
+  count: 0
+--- !u!114 &6315054289268356432
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4250668051082455769}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9fe6fa8adbd4439ab5d37435dbf9744, type: 3}
+  m_Name:
+  m_EditorClassIdentifier: MintTycoon.Runtime::MintTycoon.Inventory.InventoryStackView
+  inventory: {fileID: 5697745946253198020}
+  stackAnchor: {fileID: 4362389116831788093}
+  resourceDefinitions:
+  - {fileID: 11400000, guid: e6bfb78e7c5f2421f94ff623892fada9, type: 2}
+  - {fileID: 11400000, guid: 72137ab53bcd044fda5ad2fc90fe2177, type: 2}
+  - {fileID: 11400000, guid: 886d33422dc7b4c809252908f33c0b1f, type: 2}
+  horizontalSpacing: 0.28
+  verticalSpacing: 0.24
+--- !u!1 &4451070190779734943
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4362389116831788093}
+  m_Layer: 0
+  m_Name: Inventory Stack Anchor
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4362389116831788093
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4451070190779734943}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 1.62, z: -0.12}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8200182387400722284}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &5145139619799245861
 GameObject:
   m_ObjectHideFlags: 0

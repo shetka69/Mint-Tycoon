@@ -4,7 +4,7 @@ Mint Tycoon is a portrait mobile casual tycoon prototype about running a medieva
 
 ## Project status
 
-**Current milestone: Stage 1 — greybox map, player controls, and camera.** The production gameplay loop has not started.
+**Current milestone: Stage 2 — resource definitions, player inventory, and carried-resource visuals.** The mine and production loop have not started.
 
 ## Architecture
 
@@ -18,6 +18,10 @@ The `MintTycoon.Runtime` assembly contains project runtime code. EditMode and Pl
 - `Scripts/Core` — shared domain identifiers and foundational types.
 - `Scripts/Player`, `Inventory`, `Resources`, `Production`, `Interaction`, `Orders`, `Economy`, `Upgrades`, `Camera`, `UI`, and `Tutorial` — focused runtime areas for later milestones.
 - `Tests/EditMode` and `Tests/PlayMode` — editor and runtime test suites.
+
+## Stage 2 inventory
+
+The player can hold up to 12 units of one resource type at a time. Inventory additions and removals are atomic, and an event notifies presentation code when contents change. The player prefab and greybox scene include an overhead carried-stack view that displays up to six units; the three resource definitions provide copper ore, ingot, and coin visuals. The stack is only populated when another gameplay system adds items, so the player starts empty until the mine milestone is implemented.
 
 ## Development order
 
