@@ -33,11 +33,18 @@ namespace MintTycoon.Editor
             Material tunnel = LoadOrCreateMaterial("Mine_Tunnel", new Color(0.12f, 0.13f, 0.12f));
             Material copper = LoadOrCreateMaterial("Mine_CopperVein", new Color(0.70f, 0.33f, 0.16f));
             Material collectionMarker = LoadOrCreateMaterial("Mine_CollectionMarker", new Color(0.95f, 0.48f, 0.16f));
+            Material collectionHighlight = LoadOrCreateMaterial("Mine_CollectionHighlight", new Color(0.95f, 0.70f, 0.30f));
+            Shader unlitShader = Shader.Find("Universal Render Pipeline/Unlit");
+            if (unlitShader != null)
+            {
+                collectionHighlight.shader = unlitShader;
+                EditorUtility.SetDirty(collectionHighlight);
+            }
 
             GameObject mine = new GameObject("Copper Mine");
             mine.transform.position = new Vector3(-3.5f, 0f, 4.5f);
             BuildMineVisual(mine.transform, stone, timber, tunnel, copper);
-            BuildCollectionZone(mine.transform, copperOre, collectionMarker);
+            BuildCollectionZone(mine.transform, copperOre, collectionMarker, collectionHighlight);
 
             PrefabUtility.SaveAsPrefabAssetAndConnect(mine, MinePrefabPath, InteractionMode.AutomatedAction);
             CreateMineLabel(mine.transform.position + Vector3.up * 2.35f);
@@ -61,34 +68,38 @@ namespace MintTycoon.Editor
             CreateVisual("Copper Vein Right", PrimitiveType.Sphere, root, new Vector3(1.00f, 0.30f, 0.12f), new Vector3(0.43f, 0.34f, 0.32f), copper);
         }
 
-        private static void BuildCollectionZone(Transform root, ResourceDefinition resource, Material markerMaterial)
+        private static void BuildCollectionZone(Transform root, ResourceDefinition resource, Material markerMaterial, Material highlightMaterial)
         {
-            // A floor outline makes the invisible trigger legible in Game view.
-            // The outline is decorative only and sits just above the greybox floor.
-            const float zoneWidth = 2.6f;
-            const float zoneDepth = 2.15f;
-            const float zoneCenterZ = -0.25f;
-            const float markerThickness = 0.07f;
-            const float markerHeight = 0.035f;
+            // A colored floor pad and raised border make the invisible trigger legible in Game view.
+            // Keep the pad ahead of the mine face so the station does not hide the zone markers.
+            const float zoneWidth = 3.2f;
+            const float zoneDepth = 2.6f;
+            const float zoneCenterZ = -1.3f;
+            const float markerThickness = 0.12f;
+            const float markerHeight = 0.06f;
+            const float groundTop = 0.15f;
+            CreateVisual("Collection Zone Highlight", PrimitiveType.Cube, root,
+                new Vector3(0f, groundTop + 0.02f, zoneCenterZ),
+                new Vector3(zoneWidth - 0.16f, 0.035f, zoneDepth - 0.16f), highlightMaterial);
             CreateVisual("Collection Zone Marker Front", PrimitiveType.Cube, root,
-                new Vector3(0f, markerHeight * 0.5f, zoneCenterZ - zoneDepth * 0.5f),
+                new Vector3(0f, groundTop + markerHeight * 0.5f + 0.03f, zoneCenterZ - zoneDepth * 0.5f),
                 new Vector3(zoneWidth, markerHeight, markerThickness), markerMaterial);
             CreateVisual("Collection Zone Marker Back", PrimitiveType.Cube, root,
-                new Vector3(0f, markerHeight * 0.5f, zoneCenterZ + zoneDepth * 0.5f),
+                new Vector3(0f, groundTop + markerHeight * 0.5f + 0.03f, zoneCenterZ + zoneDepth * 0.5f),
                 new Vector3(zoneWidth, markerHeight, markerThickness), markerMaterial);
             CreateVisual("Collection Zone Marker Left", PrimitiveType.Cube, root,
-                new Vector3(-zoneWidth * 0.5f, markerHeight * 0.5f, zoneCenterZ),
+                new Vector3(-zoneWidth * 0.5f, groundTop + markerHeight * 0.5f + 0.03f, zoneCenterZ),
                 new Vector3(markerThickness, markerHeight, zoneDepth), markerMaterial);
             CreateVisual("Collection Zone Marker Right", PrimitiveType.Cube, root,
-                new Vector3(zoneWidth * 0.5f, markerHeight * 0.5f, zoneCenterZ),
+                new Vector3(zoneWidth * 0.5f, groundTop + markerHeight * 0.5f + 0.03f, zoneCenterZ),
                 new Vector3(markerThickness, markerHeight, zoneDepth), markerMaterial);
 
             GameObject zoneObject = new GameObject("Mine Collection Zone");
             zoneObject.transform.SetParent(root, false);
-            zoneObject.transform.localPosition = new Vector3(0f, 0.95f, -0.25f);
+            zoneObject.transform.localPosition = new Vector3(0f, 0.95f, zoneCenterZ);
             BoxCollider trigger = zoneObject.AddComponent<BoxCollider>();
             trigger.isTrigger = true;
-            trigger.size = new Vector3(2.6f, 1.9f, 2.15f);
+            trigger.size = new Vector3(zoneWidth, 1.9f, zoneDepth);
             InteractionZone zone = zoneObject.AddComponent<InteractionZone>();
             Rigidbody triggerBody = zoneObject.GetComponent<Rigidbody>();
             triggerBody.isKinematic = true;

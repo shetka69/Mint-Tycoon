@@ -25,9 +25,9 @@ The player can hold up to 12 units of one resource type at a time. Inventory add
 
 ## Stage 3 mine
 
-The scene contains a reusable Copper Mine prefab with an automatic collection zone, marked by a copper-colored outline on the ground. While the player remains inside the outline, the mine adds one copper ore every 0.4 seconds. It pauses for a full inventory or one carrying another resource type, and resumes when the inventory can accept ore. Leaving the zone clears the mining timer. The mine has no finite stock; its collection trigger uses a kinematic Rigidbody, while decorative mine visuals have no colliders. Furnace and press processing are not part of this milestone.
+The scene contains a reusable Copper Mine prefab with an automatic collection zone, marked by a bright amber floor pad and raised border. While the player remains inside the marked pad, the mine adds one copper ore every 0.4 seconds. It pauses for a full inventory or one carrying another resource type, and resumes when the inventory can accept ore. Leaving the zone clears the mining timer. The mine has no finite stock; its collection trigger uses a kinematic Rigidbody, while decorative mine visuals have no colliders. Stage 3 produces copper ore only; ingots and coins are made in later production stages. Furnace and press processing are not part of this milestone.
 
-To inspect or rebuild the mine in Unity, use **Mint Tycoon → Stage 3 → Set Up Copper Mine**. Run the greybox scene and walk into the marked outline; inventory count should increase every 0.4 seconds and up to six ore models should appear above the player. Leave the outline to stop collection. Collection pauses at 12 units and resumes after inventory space is freed.
+To inspect or rebuild the mine in Unity, use **Mint Tycoon → Stage 3 → Set Up Copper Mine**. Run the greybox scene and the player starts on the marked pad, so inventory count increases every 0.4 seconds and up to six ore models appear above the player. Leave the pad to stop collection. Collection pauses at 12 units and resumes after inventory space is freed.
 
 ## Development order
 

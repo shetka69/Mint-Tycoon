@@ -28,7 +28,33 @@ namespace MintTycoon.Interaction
             ConfigurePhysics();
         }
 
+        private void Start()
+        {
+            // Trigger callbacks can be missed for objects that are already overlapping when
+            // play begins. Seed the overlap state once so a player spawning in a station zone
+            // starts the same interaction as a player who walks into it.
+            if (triggerCollider == null)
+                return;
+
+            Physics.SyncTransforms();
+            Vector3 halfExtents = Vector3.Scale(triggerCollider.size * 0.5f, transform.lossyScale);
+            Collider[] overlaps = Physics.OverlapBox(
+                triggerCollider.transform.TransformPoint(triggerCollider.center),
+                halfExtents,
+                triggerCollider.transform.rotation,
+                Physics.AllLayers,
+                QueryTriggerInteraction.Ignore);
+
+            foreach (Collider overlap in overlaps)
+                RegisterPlayerCollider(overlap);
+        }
+
         private void OnTriggerEnter(Collider other)
+        {
+            RegisterPlayerCollider(other);
+        }
+
+        private void RegisterPlayerCollider(Collider other)
         {
             if (other == null || colliderOwners.ContainsKey(other))
                 return;
