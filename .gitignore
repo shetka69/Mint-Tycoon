@@ -1,0 +1,36 @@
+# Unity generated data and local state
+/[Ll]ibrary/
+/[Tt]emp/
+/[Oo]bj/
+/[Bb]uild/
+/[Bb]uilds/
+/[Ll]ogs/
+/[Uu]ser[Ss]ettings/
+/[Mm]emoryCaptures/
+/[Rr]ecordings/
+
+# Generated IDE files
+.vs/
+.idea/
+.vscode/
+*.csproj
+*.sln
+*.slnx
+*.user
+*.pidb
+*.booproj
+*.svd
+*.pdb
+*.mdb
+*.opendb
+*.VC.db
+
+# OS and tool metadata
+.DS_Store
+Thumbs.db
+
+# Crash reports and editor backups
+sysinfo.txt
+*.stacktrace
+*.orig
+*.tmp
