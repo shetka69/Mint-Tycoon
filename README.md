@@ -4,7 +4,7 @@ Mint Tycoon is a portrait mobile casual tycoon prototype about running a medieva
 
 ## Project status
 
-**Current milestone: Stage 7 — automatic ingot transport and the first paid upgrade.**
+**Current milestone: Stage 8 — contextual onboarding and UX.**
 
 ## Architecture
 
@@ -52,6 +52,12 @@ To inspect or rebuild this stage in Unity, use **Mint Tycoon → Stage 6 → Set
 The marked upgrade pad costs 40 gold. Entering it with enough gold activates the conveyor between the furnace output and mint press input. It transfers one finished ingot every 0.12 seconds while the press has room. The transfer checks both buffers and compatible recipes before moving anything, so it cannot duplicate or discard ingots when the press is full.
 
 To inspect or rebuild this stage in Unity, use **Mint Tycoon → Stage 7 → Set Up Automatic Conveyor Upgrade**. The belt is shown as locked before purchase and changes appearance when active.
+
+## Stage 8 contextual tutorial
+
+The field guide teaches the full production loop in context: collect ore, load the furnace, move an ingot to the press, deliver coins to the wagon, earn gold, and buy the automatic conveyor. It advances from live inventory, production, order, wallet, and conveyor events, so a hint only changes after the corresponding action succeeds.
+
+To inspect or rebuild this stage in Unity, use **Mint Tycoon → Stage 8 → Set Up Contextual Tutorial**. The guide sits below the order HUD and stays compact in the portrait layout.
 
 ## Development order
 
