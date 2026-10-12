@@ -21,13 +21,13 @@ The `MintTycoon.Runtime` assembly contains project runtime code. EditMode and Pl
 
 ## Stage 2 inventory
 
-The player can hold up to 12 units of one resource type at a time. Inventory additions and removals are atomic, and an event notifies presentation code when contents change. The player prefab and greybox scene include an overhead carried-stack view that displays up to six units; the three resource definitions provide copper ore, ingot, and coin visuals. The stack is only populated when another gameplay system adds items, so the player starts empty until the mine milestone is implemented.
+The player can hold up to 12 units of one resource type at a time. Inventory additions and removals are atomic, and an event notifies presentation code when contents change. The player prefab and greybox scene include an overhead carried-stack view that displays up to six units; the three resource definitions provide copper ore, ingot, and coin visuals. The player starts empty and the mine adds ore as soon as the player enters its marked collection zone.
 
 ## Stage 3 mine
 
-The scene contains a reusable Copper Mine prefab with an automatic collection zone. While the player remains in the zone, the mine adds one copper ore every 0.4 seconds. It pauses for a full inventory or one carrying another resource type, and resumes when the inventory can accept ore. Leaving the zone clears the mining timer. The mine has no finite stock; its collection trigger uses a kinematic Rigidbody, while decorative mine visuals have no colliders. Furnace and press processing are not part of this milestone.
+The scene contains a reusable Copper Mine prefab with an automatic collection zone, marked by a copper-colored outline on the ground. While the player remains inside the outline, the mine adds one copper ore every 0.4 seconds. It pauses for a full inventory or one carrying another resource type, and resumes when the inventory can accept ore. Leaving the zone clears the mining timer. The mine has no finite stock; its collection trigger uses a kinematic Rigidbody, while decorative mine visuals have no colliders. Furnace and press processing are not part of this milestone.
 
-To inspect or rebuild the mine in Unity, use **Mint Tycoon → Stage 3 → Set Up Copper Mine**. For a quick gameplay check, run the greybox scene, enter the mine zone for about 1.2 seconds, then leave and confirm the ore count stays unchanged. Re-enter and wait until the inventory reaches 12; the carried stack should show at most six ore models. Empty some slots while standing in the zone and confirm mining resumes.
+To inspect or rebuild the mine in Unity, use **Mint Tycoon → Stage 3 → Set Up Copper Mine**. Run the greybox scene and walk into the marked outline; inventory count should increase every 0.4 seconds and up to six ore models should appear above the player. Leave the outline to stop collection. Collection pauses at 12 units and resumes after inventory space is freed.
 
 ## Development order
 

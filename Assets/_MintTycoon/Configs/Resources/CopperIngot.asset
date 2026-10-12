@@ -15,4 +15,4 @@ MonoBehaviour:
   type: 1
   displayName: Copper Ingot
   icon: {fileID: 0}
-  stackVisualPrefab: {fileID: 100100000, guid: c95a007caec2744d79f434ff5d171a00, type: 3}
+  stackVisualPrefab: {fileID: 376135732803154470, guid: c95a007caec2744d79f434ff5d171a00, type: 3}

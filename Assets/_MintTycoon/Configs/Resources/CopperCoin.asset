@@ -15,4 +15,4 @@ MonoBehaviour:
   type: 2
   displayName: Copper Coin
   icon: {fileID: 0}
-  stackVisualPrefab: {fileID: 100100000, guid: a4de4f7eb021d4a2581ed1427dcc2eba, type: 3}
+  stackVisualPrefab: {fileID: 3639179241932813879, guid: a4de4f7eb021d4a2581ed1427dcc2eba, type: 3}

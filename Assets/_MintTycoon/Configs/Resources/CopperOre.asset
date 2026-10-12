@@ -15,4 +15,4 @@ MonoBehaviour:
   type: 0
   displayName: Copper Ore
   icon: {fileID: 0}
-  stackVisualPrefab: {fileID: 100100000, guid: 32ea9c9ae92124975ab53e9995b7b9b1, type: 3}
+  stackVisualPrefab: {fileID: 607561946660883070, guid: 32ea9c9ae92124975ab53e9995b7b9b1, type: 3}

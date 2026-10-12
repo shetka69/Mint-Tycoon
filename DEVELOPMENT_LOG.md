@@ -49,4 +49,4 @@
 - Added the idempotent Editor setup action at **Mint Tycoon → Stage 3 → Set Up Copper Mine**.
 - No furnace/press recipes, production buffers, wagon, orders, economy, or transport were added.
 
-**Validation:** Unity 6.6 batch mode compiled the runtime and Editor code without C# compiler errors and executed the Stage 3 scene setup in an isolated working copy; the resulting scene, prefab, and materials were copied into the main project. The interactive collection loop has not yet been exercised in Play Mode.
+**Validation:** Unity 6.6 batch mode compiled the runtime and Editor code without C# compiler errors and executed the Stage 3 scene setup in an isolated working copy. Follow-up debugging found that the open Unity Editor had retained a pre-Stage-3 scene in Play Mode, so it did not display the mine or run its collection trigger. The scene was reloaded from disk, the trigger footprint was marked visibly, and the resource stack-prefab references were corrected to resolve as GameObjects. Interactive collection still needs a quick Play Mode confirmation in the reloaded scene.
