@@ -4,7 +4,7 @@ Mint Tycoon is a portrait mobile casual tycoon prototype about running a medieva
 
 ## Project status
 
-**Current milestone: Stage 5 — automatic minting of copper coins with bounded buffers and visible transfer zones.** Orders and the gold economy are planned for later milestones.
+**Current milestone: Stage 6 — royal wagon orders and gold rewards.** Automatic transport and paid upgrades are planned for the next milestone.
 
 ## Architecture
 
@@ -41,6 +41,12 @@ The Copper Mint Press is placed at the planned map location. Its amber input zon
 
 To inspect or rebuild the press in Unity, use **Mint Tycoon → Stage 5 → Set Up Copper Mint Press**. Orders, wagon delivery, and gold rewards are not part of Stage 5.
 
+## Stage 6 royal wagon and orders
+
+The Royal Wagon starts at its map location with a marked coin-delivery zone. It accepts only the active order's copper coins, transferring one every 0.12 seconds and never accepting surplus. The first order requests 12 coins and awards 50 gold; the second requests 16 coins and awards 70 gold. On completion, the reward is added to the player's separate gold wallet, the wagon travels away along its route and returns with the next order. The two-order sequence repeats. The HUD displays order progress, the reward, and the current gold balance.
+
+To inspect or rebuild this stage in Unity, use **Mint Tycoon → Stage 6 → Set Up Royal Wagon and Orders**. Gold does not occupy the carried-resource inventory.
+
 ## Development order
 
 1. Project foundation and architecture.
@@ -49,7 +55,8 @@ To inspect or rebuild the press in Unity, use **Mint Tycoon → Stage 5 → Set 
 4. Furnace smelting and visible production buffers.
 5. Copper mint press and coin production.
 6. Wagon orders and gold economy.
-7. Transport upgrade, tutorial/UX, presentation, and optimization/WebGL preparation.
+7. Automatic transport and paid upgrades.
+8. Contextual onboarding, presentation, and optimization/WebGL preparation.
 
 Work stops at the end of each milestone for review before the next milestone begins.
 

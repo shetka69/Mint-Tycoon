@@ -73,3 +73,16 @@
 - Orders, the wagon, gold rewards, and upgrades remain for later stages.
 
 **Validation:** Unity 6.6 imported and compiled the shared runtime and Stage 5 Editor setup with no compiler errors. The Stage 5 setup action created and saved the recipe, press prefab, and greybox scene instance. The Inspector shows the recipe, both zones, 12-unit input/output capacities, the 0.12-second transfer interval, and the two buffer presentation references. The Unity Console shows no errors or warnings after setup. Play Mode behavior was not exercised in this stage.
+
+## Stage 6 — Royal wagon, orders, and gold
+
+**Date:** 2026-10-12
+
+- Added two ScriptableObject orders: 12 copper coins for 50 gold, followed by 16 coins for 70 gold.
+- Added the player's separate `GoldWallet`, an order-progress component that awards each reward once, and an automatic wagon receiver limited to the exact active order quantity.
+- Replaced the wagon blockout with a reusable Royal Wagon prefab, a visible delivery zone, and a return route with predefined waypoints. After completing an order, the wagon departs and returns before advancing to the next order; the two-order sequence repeats.
+- Added an on-screen order, reward, and gold HUD plus a live order sign over the wagon.
+- Added the idempotent Editor setup action at **Mint Tycoon → Stage 6 → Set Up Royal Wagon and Orders** and documented the stage in the README.
+- Automatic transport and upgrades remain for Stage 7.
+
+**Validation:** Unity 6.6 compiled the runtime and Editor setup without compiler errors. The setup action saved both order assets, the Royal Wagon prefab, player wallet reference, delivery trigger, four route offsets, HUD, and greybox scene. Play Mode confirmed the initial order and gold HUD render; the Console showed no errors or warnings after the final setup. Two asset-name warnings found during setup were corrected by matching each ScriptableObject name to its asset filename. Coin delivery, reward payout, and the wagon route were not manually exercised in Play Mode.
