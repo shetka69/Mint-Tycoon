@@ -40,8 +40,14 @@ To inspect or rebuild the furnace in Unity, use **Mint Tycoon → Stage 4 → Se
 1. Project foundation and architecture.
 2. Greybox map, player movement, and camera.
 3. Resources, inventory, and carried-resource visuals.
-4. Mine and furnace.
+4. Furnace smelting and visible production buffers.
 5. Mint press, wagon orders, and gold economy.
 6. Transport upgrade, tutorial/UX, presentation, and optimization/WebGL preparation.
 
-Work stops at the end of 
+Work stops at the end of each milestone for review before the next milestone begins.
+
+## Unity setup
+
+Open the project folder containing `Assets`, `Packages`, and `ProjectSettings` with Unity **6000.6.5f1**. Open `Assets/_MintTycoon/Scenes/MintTycoon_Greybox.unity` and set the Game view aspect to **9:16** for the intended portrait preview. Use WASD or arrow keys in the Editor; use the on-screen joystick on touch devices. The configured Universal Render Pipeline assets are in `Assets/Settings`. The package manifest is the source of truth for package dependencies. No third-party paid assets or dependencies have been added.
+
+Run project tests from **Window → General → Test Runner**, selecting EditMode or PlayMode as appropriate. The test assemblies are ready for later milestones.

@@ -96,13 +96,96 @@ namespace MintTycoon.Production
                 {
                     if (toInput)
                     {
-                        // Remove the carried unit before committing it to the buffer. The buffer
-                        // cannot reject it after the capacity check because all changes run on
-                        // Unity's main thread.
+                        // Remove the carried unit before committing it to the buffer. Capacity was
+                        // checked immediately above, and the main-thread buffer cannot reject it.
                         if (!inventory.TryRemove(recipe.Input.Type, 1))
                         {
                             elapsed = 0f;
                             break;
                         }
 
-                        inp
+                        inputCount++;
+                    }
+                    else
+                    {
+                        // Reserve the output before notifying inventory listeners; restore it if
+                        // the inventory changed unexpectedly during the notification.
+                        outputCount--;
+                        if (!inventory.TryAdd(recipe.Output.Type, 1))
+                        {
+                            outputCount++;
+                            elapsed = 0f;
+                            break;
+                        }
+                    }
+
+                    elapsed -= transferIntervalSeconds;
+                    BuffersChanged?.Invoke();
+                }
+
+                timers[inventory] = CanTransfer(inventory, toInput) ? elapsed : 0f;
+            }
+        }
+
+        private bool CanTransfer(PlayerInventory inventory, bool toInput)
+        {
+            if (inventory == null || recipe == null || recipe.Input == null || recipe.Output == null)
+                return false;
+
+            if (toInput)
+                return inputCount < InputCapacity
+                    && inventory.HasResource
+                    && inventory.CurrentResource == recipe.Input.Type;
+
+            return outputCount > 0
+                && inventory.FreeCapacity > 0
+                && (!inventory.HasResource || inventory.CurrentResource == recipe.Output.Type);
+        }
+
+        private void ProcessProduction()
+        {
+            if (recipe == null || recipe.Input == null || recipe.Output == null
+                || recipe.InputAmount <= 0 || recipe.OutputAmount <= 0 || recipe.CycleDurationSeconds <= 0f)
+                return;
+
+            if (inputCount >= recipe.InputAmount && outputCapacity - outputCount >= recipe.OutputAmount)
+                productionElapsed += Time.deltaTime;
+
+            while (productionElapsed >= recipe.CycleDurationSeconds
+                   && inputCount >= recipe.InputAmount
+                   && outputCapacity - outputCount >= recipe.OutputAmount)
+            {
+                productionElapsed -= recipe.CycleDurationSeconds;
+                inputCount -= recipe.InputAmount;
+                outputCount += recipe.OutputAmount;
+                BuffersChanged?.Invoke();
+            }
+        }
+
+        private void HandleInputEntered(PlayerInventory inventory) => AddPlayer(inputElapsed, inventory);
+        private void HandleOutputEntered(PlayerInventory inventory) => AddPlayer(outputElapsed, inventory);
+        private void HandleInputExited(PlayerInventory inventory) => RemovePlayer(inputElapsed, inventory);
+        private void HandleOutputExited(PlayerInventory inventory) => RemovePlayer(outputElapsed, inventory);
+
+        private static void AddPlayer(Dictionary<PlayerInventory, float> timers, PlayerInventory inventory)
+        {
+            if (inventory != null && !timers.ContainsKey(inventory))
+                timers.Add(inventory, 0f);
+        }
+
+        private static void RemovePlayer(Dictionary<PlayerInventory, float> timers, PlayerInventory inventory)
+        {
+            if (inventory != null)
+                timers.Remove(inventory);
+        }
+
+        private void OnValidate()
+        {
+            inputCapacity = Mathf.Max(1, inputCapacity);
+            outputCapacity = Mathf.Max(1, outputCapacity);
+            transferIntervalSeconds = Mathf.Max(0.01f, transferIntervalSeconds);
+            inputCount = Mathf.Clamp(inputCount, 0, inputCapacity);
+            outputCount = Mathf.Clamp(outputCount, 0, outputCapacity);
+        }
+    }
+}

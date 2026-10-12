@@ -44,4 +44,20 @@
 **Date:** 2026-10-12
 
 - Added a reusable `InteractionZone` that reports player inventories entering and leaving a trigger, including safe handling of overlapping colliders and zone disable.
-- Added `MiningStation`, which produces one copper ore every 0.4 seconds for each compatible inventory inside its collection zone. It stops at capacity 
+- Added `MiningStation`, which produces one copper ore every 0.4 seconds for each compatible inventory inside its collection zone. It stops at capacity or when another resource type is carried, and resumes after space becomes available.
+- Replaced the mine blockout with a small timber-and-stone copper mine visual and a scene prefab at the planned map coordinates. The collection trigger has a kinematic Rigidbody; decorative props have no colliders. A bright amber floor pad and raised border mark the collection footprint in Game view.
+- Added the idempotent Editor setup action at **Mint Tycoon → Stage 3 → Set Up Copper Mine**.
+- No furnace/press recipes, production buffers, wagon, orders, economy, or transport were added.
+
+**Validation:** Unity 6.6 batch mode compiled the runtime and Editor code without C# compiler errors and executed the Stage 3 scene setup in an isolated working copy. Follow-up debugging found that the open Unity Editor had retained a pre-Stage-3 scene in Play Mode, so it did not display the mine or run its collection trigger. The scene was reloaded from disk, the trigger footprint was marked visibly, and the resource stack-prefab references were corrected to resolve as GameObjects. The trigger now seeds overlaps at startup as well as handling trigger-enter events, so an idle player already inside the mine zone begins collecting. Play Mode showed copper ore models appearing above the player. The mine produces ore, not coins; coins are made by the later press stage.
+
+## Stage 4 — Copper furnace
+
+**Date:** 2026-10-12
+
+- Added `FurnaceStation` with bounded 12-unit input and output buffers, independent player transfer zones, and automatic one-ore-to-one-ingot processing every 0.5 seconds.
+- Added the Copper Furnace prefab to the greybox scene with visibly marked amber input and teal output pads, buffer count labels, and up to six displayed resource stacks per buffer.
+- Added the idempotent Editor setup action at **Mint Tycoon → Stage 4 → Set Up Copper Furnace** and documented the stage in the README.
+- Coins, the mint press, orders, and transport remain planned for later stages.
+
+**Validation:** Unity 6.6 reimported the restored full scene, rebuilt the furnace prefab and scene instance, and reported the Stage 4 setup complete. The Inspector shows the furnace recipe, both interaction zones, the 12-unit capacities, and buffer visual references. Unity Console currently shows no compiler errors or scene repair errors.
