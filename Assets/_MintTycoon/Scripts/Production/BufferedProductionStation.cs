@@ -33,6 +33,23 @@ namespace MintTycoon.Production
         public int OutputCapacity => Mathf.Max(1, outputCapacity);
         public ProductionRecipeDefinition Recipe => recipe;
 
+        /// <summary>Moves output directly to a compatible station input as one atomic main-thread operation.</summary>
+        public bool TryTransferOutputTo(BufferedProductionStation destination, int amount)
+        {
+            if (destination == null || destination == this || amount <= 0
+                || recipe == null || recipe.Output == null
+                || destination.recipe == null || destination.recipe.Input == null
+                || recipe.Output.Type != destination.recipe.Input.Type
+                || outputCount < amount || destination.InputCapacity - destination.inputCount < amount)
+                return false;
+
+            outputCount -= amount;
+            destination.inputCount += amount;
+            BuffersChanged?.Invoke();
+            destination.BuffersChanged?.Invoke();
+            return true;
+        }
+
         protected virtual void OnEnable()
         {
             if (inputZone != null)

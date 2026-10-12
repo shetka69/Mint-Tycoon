@@ -4,7 +4,7 @@ Mint Tycoon is a portrait mobile casual tycoon prototype about running a medieva
 
 ## Project status
 
-**Current milestone: Stage 6 — royal wagon orders and gold rewards.** Automatic transport and paid upgrades are planned for the next milestone.
+**Current milestone: Stage 7 — automatic ingot transport and the first paid upgrade.**
 
 ## Architecture
 
@@ -46,6 +46,12 @@ To inspect or rebuild the press in Unity, use **Mint Tycoon → Stage 5 → Set 
 The Royal Wagon starts at its map location with a marked coin-delivery zone. It accepts only the active order's copper coins, transferring one every 0.12 seconds and never accepting surplus. The first order requests 12 coins and awards 50 gold; the second requests 16 coins and awards 70 gold. On completion, the reward is added to the player's separate gold wallet, the wagon travels away along its route and returns with the next order. The two-order sequence repeats. The HUD displays order progress, the reward, and the current gold balance.
 
 To inspect or rebuild this stage in Unity, use **Mint Tycoon → Stage 6 → Set Up Royal Wagon and Orders**. Gold does not occupy the carried-resource inventory.
+
+## Stage 7 automatic conveyor upgrade
+
+The marked upgrade pad costs 40 gold. Entering it with enough gold activates the conveyor between the furnace output and mint press input. It transfers one finished ingot every 0.12 seconds while the press has room. The transfer checks both buffers and compatible recipes before moving anything, so it cannot duplicate or discard ingots when the press is full.
+
+To inspect or rebuild this stage in Unity, use **Mint Tycoon → Stage 7 → Set Up Automatic Conveyor Upgrade**. The belt is shown as locked before purchase and changes appearance when active.
 
 ## Development order
 
