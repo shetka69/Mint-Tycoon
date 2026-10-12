@@ -61,3 +61,15 @@
 - Coins, the mint press, orders, and transport remain planned for later stages.
 
 **Validation:** Unity 6.6 reimported the restored full scene, rebuilt the furnace prefab and scene instance, and reported the Stage 4 setup complete. The Inspector shows the furnace recipe, both interaction zones, the 12-unit capacities, and buffer visual references. Unity Console currently shows no compiler errors or scene repair errors.
+
+## Stage 5 — Copper mint press
+
+**Date:** 2026-10-12
+
+- Extracted recipe execution, bounded buffers, zone transfers, and buffer visualization into reusable production-station components while preserving the existing furnace component identity.
+- Added the copper minting recipe: one copper ingot becomes two copper coins every 0.4 seconds. Output production requires space for both coins.
+- Added a reusable Copper Mint Press prefab and scene instance at the planned map coordinates, with visible amber ingot-input and teal coin-output zones, buffer labels, and stack visuals.
+- Added the idempotent Editor setup action at **Mint Tycoon → Stage 5 → Set Up Copper Mint Press** and documented the stage in the README.
+- Orders, the wagon, gold rewards, and upgrades remain for later stages.
+
+**Validation:** Unity 6.6 imported and compiled the shared runtime and Stage 5 Editor setup with no compiler errors. The Stage 5 setup action created and saved the recipe, press prefab, and greybox scene instance. The Inspector shows the recipe, both zones, 12-unit input/output capacities, the 0.12-second transfer interval, and the two buffer presentation references. The Unity Console shows no errors or warnings after setup. Play Mode behavior was not exercised in this stage.
