@@ -38,3 +38,15 @@
 - No mine, furnace, press, resource gathering, or production transfer behavior was added.
 
 **Validation:** Unity imported the new assets and compiled the runtime and Editor assemblies; no C# compiler errors were found. Confirmed that resource definition assets, stack prefabs, and materials were generated, and that the scene and player prefab were updated. The player starts with an empty inventory; after adding units through `PlayerInventory.TryAdd`, the matching resource stack appears. No Play Mode check of this new behavior was performed in this session.
+
+## Stage 3 — Infinite copper mine
+
+**Date:** 2026-10-12
+
+- Added a reusable `InteractionZone` that reports player inventories entering and leaving a trigger, including safe handling of overlapping colliders and zone disable.
+- Added `MiningStation`, which produces one copper ore every 0.4 seconds for each compatible inventory inside its collection zone. It stops at capacity or when another resource type is carried, and resumes after space becomes available.
+- Replaced the mine blockout with a small timber-and-stone copper mine visual and a scene prefab at the planned map coordinates. The collection trigger has a kinematic Rigidbody; decorative props have no colliders.
+- Added the idempotent Editor setup action at **Mint Tycoon → Stage 3 → Set Up Copper Mine**.
+- No furnace/press recipes, production buffers, wagon, orders, economy, or transport were added.
+
+**Validation:** Unity 6.6 batch mode compiled the runtime and Editor code without C# compiler errors and executed the Stage 3 scene setup in an isolated working copy; the resulting scene, prefab, and materials were copied into the main project. The interactive collection loop has not yet been exercised in Play Mode.
