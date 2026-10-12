@@ -236,7 +236,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 309a637d5d00147d2a7c2f81f026d814, type: 3}
-  m_Name
+  m_Name:
   m_EditorClassIdentifier: MintTycoon.Runtime::MintTycoon.Upgrades.UpgradePurchaseZone
   interactionZone: {fileID: 52276304}
   upgrade: {fileID: 11400000, guid: 941677888d9fc4f10846c79fbb1a2e1c, type: 2}
@@ -292,7 +292,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4b5de02f4b83347f48898d7183c47254, type: 3}
-  m_Name
+  m_Name:
   m_EditorClassIdentifier: MintTycoon.Runtime::MintTycoon.Interaction.InteractionZone
 --- !u!54 &52276305
 Rigidbody:
@@ -1507,7 +1507,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 39567424a897f420cb6edac14bcdadb5, type: 3}
-  m_Name
+  m_Name:
   m_EditorClassIdentifier: MintTycoon.Runtime::MintTycoon.Player.VirtualJoystick
   background: {fileID: 353531873}
   handle: {fileID: 1788290751}
@@ -1522,7 +1522,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8c2732477a347486785ac1ef0d3ace13, type: 3}
-  m_Name
+  m_Name:
   m_EditorClassIdentifier: MintTycoon.Runtime::MintTycoon.UI.CircleGraphic
   m_Material: {fileID: 0}
   m_Color: {r: 0.12, g: 0.16, b: 0.17, a: 0.45}
@@ -2966,7 +2966,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: dc42784cf147c0c48a680349fa168899, type: 3}
-  m_Name
+  m_Name:
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.GraphicRaycaster
   m_IgnoreReversedGraphics: 1
   m_BlockingObjects: 0
@@ -2983,7 +2983,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
-  m_Name
+  m_Name:
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.CanvasScaler
   m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
@@ -3051,7 +3051,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ef37a96672fb04158ad2d09cd59fa0eb, type: 3}
-  m_Name
+  m_Name:
   m_EditorClassIdentifier: MintTycoon.Runtime::MintTycoon.UI.OrderHudView
   orderProgress: {fileID: 5677665988198806778}
   wallet: {fileID: 2072827135}
@@ -3088,7 +3088,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6c4185b05f39641a2972e7be658aadd4, type: 3}
-  m_Name
+  m_Name:
   m_EditorClassIdentifier: MintTycoon.Runtime::MintTycoon.CameraSystem.FollowCamera
   target: {fileID: 2072827130}
   distance: 22
@@ -3560,7 +3560,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
-  m_Name
+  m_Name:
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Text
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 0.84, b: 0.3, a: 1}
@@ -3779,7 +3779,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1344c3c82d62a2a41a3576d8abb8e3ea, type: 3}
-  m_Name
+  m_Name:
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.RawImage
   m_Material: {fileID: 0}
   m_Color: {r: 0.12, g: 0.09, b: 0.06, a: 0.88}
@@ -3963,7 +3963,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
-  m_Name
+  m_Name:
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Text
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 0.86, b: 0.52, a: 1}
@@ -4138,7 +4138,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8c2732477a347486785ac1ef0d3ace13, type: 3}
-  m_Name
+  m_Name:
   m_EditorClassIdentifier: MintTycoon.Runtime::MintTycoon.UI.CircleGraphic
   m_Material: {fileID: 0}
   m_Color: {r: 0.82, g: 0.88, b: 0.84, a: 0.88}
@@ -4379,7 +4379,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 01614664b831546d2ae94a42149d80ac, type: 3}
-  m_Name
+  m_Name:
   m_EditorClassIdentifier: Unity.InputSystem::UnityEngine.InputSystem.UI.InputSystemUIInputModule
   m_SendPointerHoverToParent: 1
   m_MoveRepeatDelay: 0.5
@@ -4410,7 +4410,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 76c392e42b5098c458856cdf6ecaaaa1, type: 3}
-  m_Name
+  m_Name:
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.EventSystems.EventSystem
   m_FirstSelected: {fileID: 0}
   m_sendNavigationEvents: 1
@@ -4485,7 +4485,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
-  m_Name
+  m_Name:
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Text
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -4693,7 +4693,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: faf30fe89ca66498285d4531acec00ca, type: 3}
-  m_Name
+  m_Name:
   m_EditorClassIdentifier: MintTycoon.Runtime::MintTycoon.Player.PlayerMovement
   joystick: {fileID: 353531874}
   movementReference: {fileID: 954427877}
@@ -4734,7 +4734,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e9fe6fa8adbd4439ab5d37435dbf9744, type: 3}
-  m_Name
+  m_Name:
   m_EditorClassIdentifier: MintTycoon.Runtime::MintTycoon.Inventory.InventoryStackView
   inventory: {fileID: 2072827134}
   stackAnchor: {fileID: 1948572402}
@@ -4754,7 +4754,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c4925e617826842dbbf1d1506501e9e1, type: 3}
-  m_Name
+  m_Name:
   m_EditorClassIdentifier: MintTycoon.Runtime::MintTycoon.Inventory.PlayerInventory
   capacity: 12
   resourceType: 0
@@ -4769,7 +4769,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 602dcf24b4550444984dc95ea96294d0, type: 3}
-  m_Name
+  m_Name:
   m_EditorClassIdentifier: MintTycoon.Runtime::MintTycoon.Economy.GoldWallet
   balance: 0
 --- !u!1 &2122103509
@@ -4800,7 +4800,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ef601b70bb7994052ae03b240649ecf7, type: 3}
-  m_Name
+  m_Name:
   m_EditorClassIdentifier: MintTycoon.Runtime::MintTycoon.Production.ResourceConveyor
   source: {fileID: 9026438734162455614}
   destination: {fileID: 7179970713106306212}
@@ -4816,7 +4816,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: dfee37c04be3f4e37a24117e618dcbb6, type: 3}
-  m_Name
+  m_Name:
   m_EditorClassIdentifier: MintTycoon.Runtime::MintTycoon.Production.ConveyorBeltView
   conveyor: {fileID: 2122103510}
   beltRenderers:
@@ -5080,7 +5080,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 22212ac6ce05d47e7a6ef5100e097c53, type: 3}
-  m_Name
+  m_Name:
   m_EditorClassIdentifier: MintTycoon.Runtime::MintTycoon.Orders.OrderProgress
 --- !u!102 &5677665988198806779 stripped
 TextMesh:
@@ -5153,7 +5153,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 23035fb4dcdd34b599e14f08f5ac7817, type: 3}
-  m_Name
+  m_Name:
   m_EditorClassIdentifier: MintTycoon.Runtime::MintTycoon.Production.BufferedProductionStation
 --- !u!1001 &9026438734162455613
 PrefabInstance:
@@ -5221,7 +5221,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 97878c50786c4897ab8cb76ba30e40f6, type: 3}
-  m_Name
+  m_Name:
   m_EditorClassIdentifier: MintTycoon.Runtime::MintTycoon.Production.FurnaceStation
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
