@@ -14,6 +14,7 @@ namespace MintTycoon.Upgrades
         [SerializeField] private UpgradeDefinition upgrade;
         [SerializeField] private ResourceConveyor conveyor;
         [SerializeField] private TextMesh sign;
+        [SerializeField] private bool compactSign;
         [SerializeField, HideInInspector] private bool purchased;
 
         private void OnEnable()
@@ -48,7 +49,13 @@ namespace MintTycoon.Upgrades
             if (sign == null)
                 return;
 
-            sign.text = purchased || (conveyor != null && conveyor.IsUnlocked)
+            bool unlocked = purchased || (conveyor != null && conveyor.IsUnlocked);
+            if (compactSign)
+            {
+                sign.text = unlocked ? "✓" : $"{(upgrade != null ? upgrade.GoldCost : 40)}";
+                return;
+            }
+            sign.text = unlocked
                 ? "AUTO INGOT BELT\nACTIVE"
                 : $"AUTO INGOT BELT\n{(upgrade != null ? upgrade.GoldCost : 40)} GOLD";
         }

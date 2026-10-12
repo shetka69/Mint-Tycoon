@@ -26,12 +26,18 @@ namespace MintTycoon.Production
         private float productionElapsed;
 
         public event Action BuffersChanged;
+        public event Action ProductionCompleted;
 
         public int InputCount => inputCount;
         public int OutputCount => outputCount;
         public int InputCapacity => Mathf.Max(1, inputCapacity);
         public int OutputCapacity => Mathf.Max(1, outputCapacity);
         public ProductionRecipeDefinition Recipe => recipe;
+        public bool IsProducing => recipe != null && recipe.Input != null && recipe.Output != null && recipe.InputAmount > 0 && recipe.OutputAmount > 0
+            && recipe.CycleDurationSeconds > 0f && inputCount >= recipe.InputAmount
+            && OutputCapacity - outputCount >= recipe.OutputAmount;
+        public float CycleProgress => recipe == null || recipe.CycleDurationSeconds <= 0f
+            ? 0f : Mathf.Clamp01(productionElapsed / recipe.CycleDurationSeconds);
 
         /// <summary>Moves output directly to a compatible station input as one atomic main-thread operation.</summary>
         public bool TryTransferOutputTo(BufferedProductionStation destination, int amount)
@@ -172,6 +178,7 @@ namespace MintTycoon.Production
                 inputCount -= recipe.InputAmount;
                 outputCount += recipe.OutputAmount;
                 BuffersChanged?.Invoke();
+                ProductionCompleted?.Invoke();
             }
         }
 

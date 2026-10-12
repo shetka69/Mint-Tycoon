@@ -15,17 +15,35 @@ namespace MintTycoon.UI
         [SerializeField] private Text orderDetails;
         [SerializeField] private Text goldBalance;
         [SerializeField] private TextMesh wagonOrderLabel;
+        [SerializeField] private bool compactLayout;
 
         private void OnEnable()
         {
+            BindEvents();
+            Refresh();
+        }
+
+        private void Start()
+        {
+            BindEvents();
+            Refresh();
+        }
+
+        private void BindEvents()
+        {
+            UnbindEvents();
             if (orderProgress != null)
                 orderProgress.Changed += Refresh;
             if (wallet != null)
                 wallet.BalanceChanged += Refresh;
-            Refresh();
         }
 
         private void OnDisable()
+        {
+            UnbindEvents();
+        }
+
+        private void UnbindEvents()
         {
             if (orderProgress != null)
                 orderProgress.Changed -= Refresh;
@@ -35,14 +53,23 @@ namespace MintTycoon.UI
 
         private void Refresh()
         {
+            SetText(goldBalance, compactLayout ? $"{wallet?.Balance ?? 0}" : $"GOLD  {wallet?.Balance ?? 0}");
             OrderDefinition order = orderProgress != null ? orderProgress.CurrentOrder : null;
             if (order == null || order.RequestedResource == null)
             {
-                SetText(orderTitle, "NO ROYAL ORDER");
-                SetText(orderDetails, string.Empty);
-                SetText(goldBalance, $"GOLD  {wallet?.Balance ?? 0}");
+                SetText(orderTitle, compactLayout ? string.Empty : "NO ROYAL ORDER");
+                SetText(orderDetails, compactLayout ? "—" : string.Empty);
                 if (wagonOrderLabel != null)
                     wagonOrderLabel.text = "AWAITING ORDER";
+                return;
+            }
+
+            if (compactLayout)
+            {
+                SetText(orderTitle, string.Empty);
+                SetText(orderDetails, orderProgress.IsCompleted ? "✓" : $"{orderProgress.LoadedAmount}/{order.RequestedAmount}");
+                if (wagonOrderLabel != null)
+                    wagonOrderLabel.text = orderProgress.IsCompleted ? "+" + order.GoldReward : $"{orderProgress.LoadedAmount}/{order.RequestedAmount}";
                 return;
             }
 

@@ -86,3 +86,17 @@
 - Automatic transport and upgrades remain for Stage 7.
 
 **Validation:** Unity 6.6 compiled the runtime and Editor setup without compiler errors. The setup action saved both order assets, the Royal Wagon prefab, player wallet reference, delivery trigger, four route offsets, HUD, and greybox scene. Play Mode confirmed the initial order and gold HUD render; the Console showed no errors or warnings after the final setup. Two asset-name warnings found during setup were corrected by matching each ScriptableObject name to its asset filename. Coin delivery, reward payout, and the wagon route were not manually exercised in Play Mode.
+
+## Stage 9 — Minimal UI and gameplay presentation
+
+**Date:** 2026-10-12
+
+- Replaced the two large HUD panels with two small rounded counters for the order target and gold. Hints fade after 3.5 seconds; a pulsing world marker identifies the next interaction pad. Shortened station labels, reduced joystick opacity, and added safe-area handling.
+- Added original low-poly courtyard decorations and new mine, kiln, timber press, wagon, and worker visuals. Existing gameplay objects, triggers, recipes, orders, and upgrade references remain in use. The saved camera now opens with its isometric pose.
+- Added a distance-driven worker walk cycle, press animation tied to real production progress, wagon wheel rotation, furnace smoke, recipe spark bursts, and reward/unlock particles.
+- Added five original short mono sound clips for mining, pickup, recipe completion, order reward, and conveyor purchase. The reproducible audio generator uses only Python's standard library. No packages or third-party assets were added.
+- Added shared compact HUD setup and **Mint Tycoon → Stage 9 → Set Up Minimal Presentation** to rebuild presentation in Edit Mode. The Stage 8 setup now rebuilds the compact HUD.
+
+**Validation:** Unity compiled the runtime and Editor scripts, executed the presentation setup, and rendered the portrait scene. An automated Play Mode walkthrough moved the CharacterController between the real interaction pads: 12 ore were collected, 12 ingots were produced and picked up, 12 coins were picked up and delivered, the first order awarded 50 gold, and conveyor purchase left 10 gold. It confirmed matching resource types, hint fade, guide movement, press movement, live smoke particles, audio-source playback, and the final conveyor-unlocked hint. The temporary walkthrough tool was removed after recording the result; the saved scene starts with an empty inventory and the first order.
+
+**Remaining:** Device/WebGL performance, browser audio activation, playable-ad packaging, and final sound mixing belong to Stage 10.

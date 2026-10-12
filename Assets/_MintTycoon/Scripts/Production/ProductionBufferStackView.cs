@@ -16,6 +16,7 @@ namespace MintTycoon.Production
         [SerializeField] private Transform outputAnchor;
         [SerializeField] private TextMesh inputCountLabel;
         [SerializeField] private TextMesh outputCountLabel;
+        [SerializeField] private bool compactCountLabels;
 
         private readonly List<GameObject> spawnedItems = new List<GameObject>(MaxVisibleItems * 2);
 
@@ -40,9 +41,9 @@ namespace MintTycoon.Production
                 return;
 
             if (inputCountLabel != null)
-                inputCountLabel.text = $"{GetShortName(inputResource)}  {station.InputCount}/{station.InputCapacity}";
+                inputCountLabel.text = compactCountLabels ? station.InputCount.ToString() : $"{GetShortName(inputResource)}  {station.InputCount}/{station.InputCapacity}";
             if (outputCountLabel != null)
-                outputCountLabel.text = $"{GetShortName(outputResource)}  {station.OutputCount}/{station.OutputCapacity}";
+                outputCountLabel.text = compactCountLabels ? station.OutputCount.ToString() : $"{GetShortName(outputResource)}  {station.OutputCount}/{station.OutputCapacity}";
 
             SpawnStack(inputResource, inputAnchor, station.InputCount, "Stored input");
             SpawnStack(outputResource, outputAnchor, station.OutputCount, "Stored output");

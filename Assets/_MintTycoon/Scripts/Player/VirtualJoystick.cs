@@ -22,6 +22,13 @@ namespace MintTycoon.Player
 
         public void OnPointerUp(PointerEventData eventData)
         {
+            ResetValue();
+        }
+
+        private void OnDisable() => ResetValue();
+
+        private void ResetValue()
+        {
             Value = Vector2.zero;
             if (handle != null)
                 handle.anchoredPosition = Vector2.zero;
