@@ -14,6 +14,9 @@ namespace MintTycoon.Player
         private CharacterController characterController;
         private float verticalSpeed;
 
+        public float PlanarSpeed { get; private set; }
+        public float MoveSpeed => moveSpeed;
+
         public void SetJoystick(VirtualJoystick value)
         {
             joystick = value;
@@ -46,6 +49,9 @@ namespace MintTycoon.Player
             verticalSpeed += Physics.gravity.y * Time.deltaTime;
 
             characterController.Move((move * moveSpeed + Vector3.up * verticalSpeed) * Time.deltaTime);
+            Vector3 velocity = characterController.velocity;
+            velocity.y = 0f;
+            PlanarSpeed = velocity.magnitude;
 
             if (move.sqrMagnitude > 0.001f)
             {
@@ -53,6 +59,8 @@ namespace MintTycoon.Player
                 transform.rotation = Quaternion.RotateTowards(transform.rotation, targetRotation, turnSpeed * Time.deltaTime);
             }
         }
+
+        private void OnDisable() => PlanarSpeed = 0f;
 
         private Vector2 ReadInput()
         {

@@ -105,6 +105,11 @@ namespace MintTycoon.Editor
         }
         private static void ConfigureWorker(Transform player)
         {
+            if (AssetDatabase.LoadAssetAtPath<GameObject>(PlayerCharacterSetup.PrefabPath) != null)
+            {
+                PlayerCharacterSetup.ApplyToPlayer(player);
+                return;
+            }
             Transform old = player.Find("Stage 9 Visuals"); if (old != null) old.gameObject.SetActive(false);
             Transform root = ReplaceContainer(player, "Imported Visuals");
             Transform visual = Instantiate("PlayerCharacter_Stickman", root, Vector3.zero);

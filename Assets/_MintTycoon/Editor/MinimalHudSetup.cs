@@ -28,8 +28,8 @@ namespace MintTycoon.Editor
             PlayerInventory inventory = player.GetComponent<PlayerInventory>();
             GoldWallet wallet = player.GetComponent<GoldWallet>();
             OrderProgress order = wagon.GetComponent<OrderProgress>();
-            VirtualJoystick joystick = canvas.GetComponentInChildren<VirtualJoystick>(true);
-            if (joystick != null) joystick.transform.SetParent(canvas.transform, false);
+            foreach (VirtualJoystick joystick in canvas.GetComponentsInChildren<VirtualJoystick>(true))
+                joystick.transform.SetParent(canvas.transform, false);
             Remove(canvas.transform, "Safe Area");
             Remove(canvas.transform, "Order HUD Panel");
             Remove(canvas.transform, "Contextual Tutorial Panel");
@@ -79,17 +79,7 @@ namespace MintTycoon.Editor
             for (int index = 0; index < targets.Length; index++) targetArray.GetArrayElementAtIndex(index).objectReferenceValue = targets[index];
             guide.ApplyModifiedPropertiesWithoutUndo();
 
-            if (joystick != null)
-            {
-                RectTransform track = joystick.GetComponent<RectTransform>();
-                track.SetParent(safeArea, false);
-                track.anchorMin = track.anchorMax = Vector2.zero; track.pivot = new Vector2(0.5f, 0.5f);
-                track.anchoredPosition = new Vector2(130f, 142f); track.sizeDelta = new Vector2(190f, 190f);
-                CircleGraphic graphic = track.GetComponent<CircleGraphic>();
-                if (graphic != null) graphic.color = new Color(0.12f, 0.16f, 0.13f, 0.18f);
-                CircleGraphic handle = track.Find("Joystick Handle")?.GetComponent<CircleGraphic>();
-                if (handle != null) { handle.color = new Color(1f, 0.96f, 0.82f, 0.42f); handle.rectTransform.sizeDelta = new Vector2(76f, 76f); handle.raycastTarget = false; }
-            }
+            FloatingJoystickSetup.Build(canvas, player.GetComponent<PlayerMovement>());
             EditorUtility.SetDirty(canvas.gameObject);
         }
 

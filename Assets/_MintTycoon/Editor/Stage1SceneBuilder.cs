@@ -181,31 +181,8 @@ namespace MintTycoon.Editor
             scaler.referenceResolution = new Vector2(1080f, 1920f);
             scaler.matchWidthOrHeight = 0.5f;
 
-            CircleGraphic backgroundImage = CreateUiCircle("Joystick Background", canvas.transform, new Color(0.12f, 0.16f, 0.17f, 0.45f), 210f, out RectTransform background);
-            background.anchorMin = background.anchorMax = Vector2.zero;
-            background.pivot = new Vector2(0.5f, 0.5f);
-            background.anchoredPosition = new Vector2(155f, 165f);
-            backgroundImage.raycastTarget = true;
-
-            CreateUiCircle("Joystick Handle", background, new Color(0.82f, 0.88f, 0.84f, 0.88f), 92f, out RectTransform handle);
-            handle.anchorMin = handle.anchorMax = new Vector2(0.5f, 0.5f);
-            handle.pivot = new Vector2(0.5f, 0.5f);
-            handle.anchoredPosition = Vector2.zero;
-            VirtualJoystick joystick = background.gameObject.AddComponent<VirtualJoystick>();
-            joystick.Configure(background, handle);
-            player.GetComponent<PlayerMovement>().SetJoystick(joystick);
+            FloatingJoystickSetup.Build(canvas, player.GetComponent<PlayerMovement>());
         }
 
-        private static CircleGraphic CreateUiCircle(string name, Transform parent, Color color, float size, out RectTransform rect)
-        {
-            GameObject imageObject = new GameObject(name, typeof(RectTransform), typeof(CanvasRenderer), typeof(CircleGraphic));
-            imageObject.transform.SetParent(parent, false);
-            rect = imageObject.GetComponent<RectTransform>();
-            rect.sizeDelta = new Vector2(size, size);
-            CircleGraphic image = imageObject.GetComponent<CircleGraphic>();
-            image.color = color;
-            image.raycastTarget = true;
-            return image;
-        }
     }
 }

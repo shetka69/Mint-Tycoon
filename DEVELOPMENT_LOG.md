@@ -112,3 +112,14 @@
 - Added ore visual variants and resource-specific stack spacing while retaining the six-model inventory display limit. Kept the temporary ground for the forthcoming tile set.
 
 **Validation:** Unity imported all twenty FBX models and compiled the runtime/Editor scripts. All twenty visual prefabs use URP materials and contain no studio objects. A Play Mode walkthrough used CharacterController movement along clear routes around the new station body colliders: collected 12 ore, produced and picked up 12 ingots, picked up and delivered 12 coins, earned 50 gold, and retained 10 after conveyor purchase. It confirmed six carried models, correct resource types, worker walk motion, vertical press motion, furnace smoke, wagon cargo, upgraded pad visibility, standing on the pad, hint fade, and the guide above the raised pad. All original `.blend` hashes matched the export manifest. The temporary review tool was removed after validation.
+
+## Stage 9 update — Supplied animated player and floating joystick
+
+**Date:** 2026-10-13
+
+- Integrated the supplied `Assets/Player` FBX files without changing source geometry. The static file is unrigged; the walking file contains the matching skinned meshes, a humanoid skeleton, and the animation used in the game. Copied the referenced outfit atlas from its accompanying local source package, and created two shared URP materials.
+- Built a separate normalized character prefab, relaxed standing clip, and idle/walk blend controller. Movement remains owned by the existing CharacterController, with animation driven by actual planar speed. Earlier character visuals and their procedural walk component are retained inactive; other model assets are unchanged.
+- Replaced the fixed joystick with an invisible full-screen pointer surface and translucent visuals that appear at the initial press and disappear on release. Added one-pointer ownership, a small dead zone, and reset handling for focus loss, suspension, disabling, and screen-size changes. Existing keyboard input is retained.
+- Updated scene setup menus so rebuilding the HUD retains floating controls and rebuilding earlier imported presentation retains the new character. The new character menu operates on the open scene, preserving its current layout edits and gameplay references.
+
+**Editor import:** Unity compiled the scripts and executed the integration menu. The imported avatar is valid and humanoid; the walk clip loops with a 0.95-second duration and approximately 1.61 m/s source velocity. The prefab's posed height is 1.6 metres with a bottom pivot; compensated for the FBX's 100x mesh transforms during normalization. The saved scene shows the new standing character, its controller and joystick references, and disabled earlier worker visuals. No new gameplay tests or device runs were added for this update.
