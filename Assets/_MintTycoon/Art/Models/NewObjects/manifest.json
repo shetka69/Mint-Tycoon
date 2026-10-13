@@ -1,0 +1,257 @@
+{
+  "models": [
+    {
+      "name": "Mine",
+      "source": "Assets/Obj/Mine/peshera2.fbx",
+      "sha256": "a9df774f165c6c36b85b92f4fd1845cec8c33351f920e7c1df1a8b68e706afaa",
+      "file": "Assets/_MintTycoon/Art/Models/NewObjects/Mine.fbx",
+      "materials": [
+        {
+          "name": "Material.025",
+          "color": [
+            0.14412829279899597,
+            0.1470271348953247,
+            0.23074008524417877,
+            1.0
+          ],
+          "metallic": 0.0,
+          "roughness": 0.5
+        },
+        {
+          "name": "Material.029",
+          "color": [
+            0.03456719219684601,
+            0.12744171917438507,
+            0.04223743826150894,
+            1.0
+          ],
+          "metallic": 0.0,
+          "roughness": 0.5
+        },
+        {
+          "name": "Material.030",
+          "color": [
+            0.04970649257302284,
+            0.05448022484779358,
+            0.08228269219398499,
+            1.0
+          ],
+          "metallic": 0.0,
+          "roughness": 0.5
+        },
+        {
+          "name": "Material.031",
+          "color": [
+            0.0975872054696083,
+            0.11443527787923813,
+            0.15592648088932037,
+            1.0
+          ],
+          "metallic": 0.0,
+          "roughness": 0.5
+        },
+        {
+          "name": "derevo",
+          "color": [
+            0.507067084312439,
+            0.18294501304626465,
+            0.0752810388803482,
+            1.0
+          ],
+          "metallic": 0.0,
+          "roughness": 0.5
+        },
+        {
+          "name": "derevodark",
+          "color": [
+            0.42001697421073914,
+            0.1191977933049202,
+            0.07069725543260574,
+            1.0
+          ],
+          "metallic": 0.0,
+          "roughness": 0.5
+        },
+        {
+          "name": "derevodarkdark",
+          "color": [
+            0.334316223859787,
+            0.08134554326534271,
+            0.06583695113658905,
+            1.0
+          ],
+          "metallic": 0.0,
+          "roughness": 0.5
+        },
+        {
+          "name": "derevosoftdark",
+          "color": [
+            0.4868892431259155,
+            0.1524612009525299,
+            0.06622499972581863,
+            1.0
+          ],
+          "metallic": 0.0,
+          "roughness": 0.5
+        },
+        {
+          "name": "kamen.001",
+          "color": [
+            0.07895221561193466,
+            0.0731532946228981,
+            0.12171962112188339,
+            1.0
+          ],
+          "metallic": 0.0,
+          "roughness": 0.7890625
+        },
+        {
+          "name": "kamen.017",
+          "color": [
+            0.13397586345672607,
+            0.12397515028715134,
+            0.20791606605052948,
+            1.0
+          ],
+          "metallic": 0.0,
+          "roughness": 0.7890625
+        },
+        {
+          "name": "kamendark",
+          "color": [
+            0.07326701283454895,
+            0.06516289710998535,
+            0.110683873295784,
+            1.0
+          ],
+          "metallic": 0.0,
+          "roughness": 0.7890625
+        },
+        {
+          "name": "relsi",
+          "color": [
+            0.1022905632853508,
+            0.1260329782962799,
+            0.19017206132411957,
+            1.0
+          ],
+          "metallic": 0.0,
+          "roughness": 0.7890625
+        },
+        {
+          "name": "relsidark",
+          "color": [
+            0.097329281270504,
+            0.09972187131643295,
+            0.15742644667625427,
+            1.0
+          ],
+          "metallic": 0.0,
+          "roughness": 0.7890625
+        }
+      ],
+      "textures": [],
+      "sourceTriangles": 436518,
+      "gameTriangles": 31234
+    },
+    {
+      "name": "Furnace",
+      "source": "Assets/Obj/blacksmiths-forge/source/Forge.fbx",
+      "sha256": "8681c15035f7d099df5e18a3a4af154a589f118acdffa38ae39d55bd00cdd05c",
+      "file": "Assets/_MintTycoon/Art/Models/NewObjects/Furnace.fbx",
+      "materials": [
+        {
+          "name": "ForgeMat",
+          "color": [
+            0.5,
+            0.5,
+            0.5,
+            1.0
+          ],
+          "metallic": 0.0,
+          "roughness": 0.5527864098548889
+        }
+      ],
+      "textures": [
+        "Assets/_MintTycoon/Art/Models/NewObjects/Textures/Furnace_0.png"
+      ],
+      "sourceTriangles": 1699,
+      "gameTriangles": 1699
+    },
+    {
+      "name": "Coin",
+      "source": "Assets/Obj/stylized-coin/source/Coin.fbx",
+      "sha256": "58abc7735bf48bf94870f7fc16c78081c9f8ea3b6300e49a5185cee3e72285eb",
+      "file": "Assets/_MintTycoon/Art/Models/NewObjects/Coin.fbx",
+      "materials": [
+        {
+          "name": "Material",
+          "color": [
+            0.800000011920929,
+            0.800000011920929,
+            0.800000011920929,
+            1.0
+          ],
+          "metallic": 0.0,
+          "roughness": 0.75
+        }
+      ],
+      "textures": [
+        "Assets/_MintTycoon/Art/Models/NewObjects/Textures/Coin_0.png"
+      ],
+      "sourceTriangles": 436,
+      "gameTriangles": 436
+    },
+    {
+      "name": "Wagon",
+      "source": "Assets/Obj/wooden-cart-01/source/OPM0021.fbx",
+      "sha256": "0d1417bea380371a0ed68948e31bcaa8da0b968c5aea064004d5f30b252e89fe",
+      "file": "Assets/_MintTycoon/Art/Models/NewObjects/Wagon.fbx",
+      "materials": [
+        {
+          "name": "OPM0021",
+          "color": [
+            0.800000011920929,
+            0.800000011920929,
+            0.800000011920929,
+            1.0
+          ],
+          "metallic": 0.0,
+          "roughness": 0.5
+        }
+      ],
+      "textures": [
+        "Assets/_MintTycoon/Art/Models/NewObjects/Textures/Wagon_0.png",
+        "Assets/_MintTycoon/Art/Models/NewObjects/Textures/Wagon_1.png",
+        "Assets/_MintTycoon/Art/Models/NewObjects/Textures/Wagon_2.png",
+        "Assets/_MintTycoon/Art/Models/NewObjects/Textures/Wagon_3.png"
+      ],
+      "sourceTriangles": 1808,
+      "gameTriangles": 1808
+    },
+    {
+      "name": "CopperOre",
+      "source": "Assets/Obj/animal-company-ore-copper-l/source/item_ore_copper_l.glb",
+      "sha256": "4bb73f506350e1247160f154d1accc15d6874207acae59b77af25cde8b69c481",
+      "file": "Assets/_MintTycoon/Art/Models/NewObjects/CopperOre.fbx",
+      "materials": [
+        {
+          "name": "Ore_Mineral",
+          "color": [
+            0.800000011920929,
+            0.800000011920929,
+            0.800000011920929,
+            1.0
+          ],
+          "metallic": 1.0,
+          "roughness": 1.0
+        }
+      ],
+      "textures": [
+        "Assets/_MintTycoon/Art/Models/NewObjects/Textures/CopperOre_0.png"
+      ],
+      "sourceTriangles": 114,
+      "gameTriangles": 114
+    }
+  ]
+}

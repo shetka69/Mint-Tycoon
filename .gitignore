@@ -39,3 +39,6 @@ sysinfo.txt
 *.blend[0-9]
 *.blend[0-9].meta
 /ArtSource/**/*.meta
+
+# Preserve supplied cart masters locally; portable game copies are exported at 1024px.
+/Assets/Obj/wooden-cart-01/textures/*

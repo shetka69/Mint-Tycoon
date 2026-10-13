@@ -21,7 +21,7 @@ namespace MintTycoon.Presentation
             float speed = movement.PlanarSpeed;
             // Blend into walking quickly; a blocked character returns to its standing pose.
             animator.SetFloat(MoveAmount, Mathf.Clamp01(speed / 0.45f), 0.08f, Time.deltaTime);
-            animator.SetFloat(PlaybackRate, Mathf.Clamp(speed / walkMetersPerSecond, 0.35f, 5f));
+            animator.SetFloat(PlaybackRate, speed < 0.05f ? 1f : Mathf.Clamp(speed / walkMetersPerSecond, 0.35f, 5f));
         }
     }
 }

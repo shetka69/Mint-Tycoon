@@ -44,6 +44,8 @@ namespace MintTycoon.Editor
             ConfigureUpgrade(Require("Automatic Conveyor Upgrade"), belt.GetComponent<ResourceConveyor>());
             ConfigureWagon(wagon);
             ConfigureDecor();
+            if (AssetDatabase.LoadAssetAtPath<GameObject>(NewObjectsSetup.Prefabs + "/Mine.prefab") != null)
+                NewObjectsSetup.ApplyToScene();
             RecordSceneOverrides();
             EditorSceneManager.MarkSceneDirty(scene);
             EditorSceneManager.SaveScene(scene);

@@ -123,3 +123,14 @@
 - Updated scene setup menus so rebuilding the HUD retains floating controls and rebuilding earlier imported presentation retains the new character. The new character menu operates on the open scene, preserving its current layout edits and gameplay references.
 
 **Editor import:** Unity compiled the scripts and executed the integration menu. The imported avatar is valid and humanoid; the walk clip loops with a 0.95-second duration and approximately 1.61 m/s source velocity. The prefab's posed height is 1.6 metres with a bottom pivot; compensated for the FBX's 100x mesh transforms during normalization. The saved scene shows the new standing character, its controller and joystick references, and disabled earlier worker visuals. No new gameplay tests or device runs were added for this update.
+
+## Stage 9 update — Supplied Idle and new production objects
+
+**Date:** 2026-10-13
+
+- Replaced the generated standing pose, which pushed this character's legs forward, with supplied `Warrior Idle.fbx`. Idle copies the Walking avatar, loops with root motion controlled by CharacterController, and plays at its authored rate when stopped. Preserved all character sources and the unused generated clip.
+- Integrated the five new `Assets/Obj` models through a separate exporter, URP materials, normalized prefabs, and an idempotent scene menu. Mine, furnace, and wagon use their existing gameplay roots; copper ore and coin resource definitions now reference the new visuals. Earlier model assets and inactive visuals are retained.
+- Reduced the mine game copy from 436,518 to 31,234 triangles without changing its source file; aligned its entrance with the collection pad. Laid the coin flat for stacks and cargo. Converted ore GLB to FBX and baked its embedded albedo while excluding the unused black vertex-colour channel. Applied a copper tint.
+- Exported 1024-pixel wagon textures; original 4K maps remain locally, excluded from Git. Configured its authored wheel axes and rebased live order cargo and sign onto the new wagon. Existing recipes, transfer triggers, rewards, controller, and map layout remain in use.
+
+**Editor import:** Unity compiled the scripts and executed both integration menus without new errors. The standing prefab now uses the supplied Idle and its shared humanoid avatar, with a 1.6-metre height and feet below the body. The Scene view shows the mine entrance facing its pad, the textured forge, and the textured wagon with its retained live order sign. Five generated visual prefabs and resource mappings were saved. No additional gameplay tests or device runs were added.

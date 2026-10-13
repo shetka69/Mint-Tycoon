@@ -77,9 +77,15 @@ Use **Mint Tycoon → Art → Import Model Assets** to regenerate shared materia
 
 ## Animated character and floating controls
 
-The current player uses the rigged character and walking cycle from `Assets/Player/Walking.fbx`. Both supplied FBX originals are preserved; the earlier character model and other models stay available. A separate 1.6-metre character prefab, shared URP materials, the accompanying outfit texture, and an idle/walk Animator controller live alongside the gameplay assets. The character animation follows actual controller displacement and does not move the gameplay root.
+The current player uses the rigged character and walking cycle from `Assets/Player/Walking.fbx`, plus the supplied `Warrior Idle.fbx` for standing. Idle copies the same humanoid avatar; the earlier generated pose is no longer assigned. The original FBX files are preserved; the earlier character model and other models stay available. A separate 1.6-metre character prefab, shared URP materials, the accompanying outfit texture, and an idle/walk Animator controller live alongside the gameplay assets. The character animation follows actual controller displacement and does not move the gameplay root.
 
 Use **Mint Tycoon → Player → Set Up Animated Character and Floating Joystick** to rebuild this integration while the greybox scene is open. Touch or click anywhere, then drag: a subtle joystick appears at the initial press and disappears on release. A small dead zone avoids accidental movement. Additional fingers cannot take over the gesture; interrupted input is cleared. Keyboard movement still works. See [character asset notes](Assets/Player/README.md).
+
+## New object set
+
+The mine, furnace, wagon, copper ore, and coin now use the supplied `Assets/Obj` models. Original source models and earlier game assets are retained. Separate generated prefabs and URP materials provide correct size, bottom pivots, textures, and carried stacks. The mine's game mesh contains 31,234 triangles instead of the source's 436,518; wagon textures use portable 1024-pixel copies while local 4K masters remain untouched. The GLB ore is exported to FBX and its embedded albedo retained. Wagon cargo uses the new coins and its two authored wheels follow route movement.
+
+Use **Mint Tycoon → Art → Import and Place New Objects** to apply these models in the open scene. See [new object workflow](Assets/Obj/README.md) for regeneration and source preservation. The tile-map foundation remains temporary.
 
 ## Development order
 

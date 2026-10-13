@@ -17,6 +17,7 @@ namespace MintTycoon.Editor
     {
         private const string SourceModel = "Assets/Player/armystickman.fbx";
         private const string RiggedModel = "Assets/Player/Walking.fbx";
+        private const string IdleModel = "Assets/Player/Warrior Idle.fbx";
         private const string TexturePath = "Assets/Player/Textures/SoldierAtlas.jpg";
         private const string MaterialFolder = "Assets/_MintTycoon/Art/Materials/Characters";
         private const string AnimationFolder = "Assets/_MintTycoon/Art/Animations/Characters";
@@ -29,8 +30,8 @@ namespace MintTycoon.Editor
             if (EditorApplication.isPlaying) throw new InvalidOperationException("Stop Play Mode before changing the character.");
             Scene scene = SceneManager.GetActiveScene();
             if (scene.path != ScenePath) throw new InvalidOperationException("Open MintTycoon_Greybox before applying the character setup.");
-            if (!File.Exists(RiggedModel) || !File.Exists(SourceModel))
-                throw new FileNotFoundException("Both supplied Player FBX files are required.");
+            if (!File.Exists(RiggedModel) || !File.Exists(SourceModel) || !File.Exists(IdleModel))
+                throw new FileNotFoundException("The player, walking, and idle FBX files are required.");
             GameModelImportSetup.EnsureFolder(MaterialFolder);
             GameModelImportSetup.EnsureFolder(AnimationFolder);
             GameModelImportSetup.EnsureFolder(Path.GetDirectoryName(PrefabPath).Replace('\\', '/'));
@@ -65,7 +66,7 @@ namespace MintTycoon.Editor
             texture.SaveAndReimport();
             Material skin = Material("SoldierBody", shader, new Color(0.906f, 0.845f, 0.856f), null);
             Material outfit = Material("SoldierOutfit", shader, Color.white, atlas);
-            foreach (string path in new[] { SourceModel, RiggedModel })
+            foreach (string path in new[] { SourceModel, RiggedModel, IdleModel })
             {
                 ModelImporter importer = (ModelImporter)AssetImporter.GetAtPath(path);
                 importer.globalScale = 1f; importer.useFileScale = true;
@@ -77,18 +78,19 @@ namespace MintTycoon.Editor
                 importer.materialLocation = ModelImporterMaterialLocation.InPrefab;
                 importer.AddRemap(new AssetImporter.SourceAssetIdentifier(typeof(Material), "body"), skin);
                 importer.AddRemap(new AssetImporter.SourceAssetIdentifier(typeof(Material), "texture"), outfit);
-                bool rigged = path == RiggedModel;
+                bool rigged = path != SourceModel;
                 importer.importAnimation = rigged;
                 importer.animationType = rigged ? ModelImporterAnimationType.Human : ModelImporterAnimationType.None;
                 if (rigged)
                 {
-                    importer.avatarSetup = ModelImporterAvatarSetup.CreateFromThisModel;
+                    importer.avatarSetup = path == IdleModel ? ModelImporterAvatarSetup.CopyFromOther : ModelImporterAvatarSetup.CreateFromThisModel;
+                    if (path == IdleModel) importer.sourceAvatar = AssetDatabase.LoadAssetAtPath<GameObject>(RiggedModel).GetComponent<Animator>().avatar;
                     importer.optimizeGameObjects = false;
                     ModelImporterClipAnimation[] clips = importer.defaultClipAnimations;
                     if (clips.Length == 0) throw new MissingReferenceException("Walking.fbx contains no animation take.");
                     foreach (ModelImporterClipAnimation clip in clips)
                     {
-                        clip.name = "Walk"; clip.loopTime = true; clip.loopPose = true;
+                        clip.name = path == IdleModel ? "Idle" : "Walk"; clip.loopTime = true; clip.loopPose = true;
                         // Extract horizontal motion: the CharacterController owns locomotion.
                         clip.lockRootPositionXZ = false; clip.lockRootHeightY = true; clip.lockRootRotation = true;
                         clip.keepOriginalPositionXZ = false; clip.keepOriginalPositionY = false;
@@ -123,7 +125,7 @@ namespace MintTycoon.Editor
                 Animator animator = model.GetComponent<Animator>();
                 if (animator == null || animator.avatar == null || !animator.avatar.isValid || !animator.avatar.isHuman)
                     throw new InvalidOperationException("Walking.fbx did not produce a valid humanoid avatar.");
-                AnimationClip idle = BuildIdlePose(animator);
+                AnimationClip idle = AssetDatabase.LoadAllAssetsAtPath(IdleModel).OfType<AnimationClip>().First(c => !c.name.StartsWith("__preview__"));
                 animator.runtimeAnimatorController = BuildController(idle, walk);
                 animator.applyRootMotion = false;
                 animator.cullingMode = AnimatorCullingMode.AlwaysAnimate;
@@ -146,42 +148,6 @@ namespace MintTycoon.Editor
                 PrefabUtility.SaveAsPrefabAsset(root, PrefabPath);
             }
             finally { EditorSceneManager.ClosePreviewScene(preview); }
-        }
-
-        private static AnimationClip BuildIdlePose(Animator animator)
-        {
-            string path = AnimationFolder + "/ArmyWorker_Idle.anim";
-            AnimationClip idle = AssetDatabase.LoadAssetAtPath<AnimationClip>(path);
-            if (idle == null) { idle = new AnimationClip { name = "ArmyWorker_Idle" }; AssetDatabase.CreateAsset(idle, path); }
-            idle.ClearCurves(); idle.frameRate = 30f;
-            HumanPose pose = new HumanPose();
-            using (HumanPoseHandler handler = new HumanPoseHandler(animator.avatar, animator.transform))
-            {
-                handler.GetHumanPose(ref pose);
-                pose.bodyRotation = Quaternion.identity;
-                pose.bodyPosition.x = pose.bodyPosition.z = 0f;
-                Array.Clear(pose.muscles, 0, pose.muscles.Length);
-                for (int i = 0; i < HumanTrait.MuscleCount; i++)
-                {
-                    string muscle = HumanTrait.MuscleName[i];
-                    if (muscle.EndsWith("Arm Down-Up")) pose.muscles[i] = -0.88f;
-                    if (muscle.EndsWith("Forearm Stretch") || muscle.EndsWith("Leg Stretch")) pose.muscles[i] = 1f;
-                    Constant(idle, muscle, pose.muscles[i]);
-                }
-                Constant(idle, "RootT.x", 0f); Constant(idle, "RootT.y", pose.bodyPosition.y); Constant(idle, "RootT.z", 0f);
-                Constant(idle, "RootQ.x", 0f); Constant(idle, "RootQ.y", 0f); Constant(idle, "RootQ.z", 0f); Constant(idle, "RootQ.w", 1f);
-                handler.SetHumanPose(ref pose);
-            }
-            AnimationClipSettings settings = AnimationUtility.GetAnimationClipSettings(idle);
-            settings.loopTime = true; settings.loopBlend = true;
-            AnimationUtility.SetAnimationClipSettings(idle, settings);
-            EditorUtility.SetDirty(idle);
-            return idle;
-        }
-
-        private static void Constant(AnimationClip clip, string property, float value)
-        {
-            AnimationUtility.SetEditorCurve(clip, EditorCurveBinding.FloatCurve("", typeof(Animator), property), AnimationCurve.Constant(0f, 1f, value));
         }
 
         private static AnimatorController BuildController(AnimationClip idle, AnimationClip walk)
