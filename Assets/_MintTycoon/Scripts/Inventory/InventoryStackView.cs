@@ -42,8 +42,8 @@ namespace MintTycoon.Inventory
             if (inventory == null || stackAnchor == null || !inventory.HasResource)
                 return;
 
-            GameObject prefab = FindPrefab(inventory.CurrentResource);
-            if (prefab == null)
+            ResourceDefinition definition = FindDefinition(inventory.CurrentResource);
+            if (definition == null || definition.StackVisualPrefab == null)
                 return;
 
             int visibleCount = Mathf.Min(inventory.Count, MaxVisibleItems);
@@ -51,8 +51,9 @@ namespace MintTycoon.Inventory
             {
                 int column = index % 2;
                 int row = index / 2;
-                Vector3 localPosition = new Vector3((column - 0.5f) * horizontalSpacing, row * verticalSpacing, 0f);
-                GameObject item = Instantiate(prefab, stackAnchor);
+                float rowSpacing = definition.StackRowSpacing > 0f ? definition.StackRowSpacing : verticalSpacing;
+                Vector3 localPosition = new Vector3((column - 0.5f) * horizontalSpacing, row * rowSpacing, 0f);
+                GameObject item = Instantiate(definition.GetStackVisual(index), stackAnchor);
                 item.name = $"Carried {inventory.CurrentResource} {index + 1}";
                 item.transform.localPosition = localPosition;
                 item.transform.localRotation = Quaternion.identity;
@@ -60,7 +61,7 @@ namespace MintTycoon.Inventory
             }
         }
 
-        private GameObject FindPrefab(ResourceType type)
+        private ResourceDefinition FindDefinition(ResourceType type)
         {
             if (resourceDefinitions == null)
                 return null;
@@ -68,7 +69,7 @@ namespace MintTycoon.Inventory
             foreach (ResourceDefinition definition in resourceDefinitions)
             {
                 if (definition != null && definition.Type == type)
-                    return definition.StackVisualPrefab;
+                    return definition;
             }
 
             return null;

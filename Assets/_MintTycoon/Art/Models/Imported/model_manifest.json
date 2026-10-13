@@ -1,0 +1,1189 @@
+{
+  "schemaVersion": 1,
+  "models": [
+    {
+      "name": "AnvilWorkbench",
+      "file": "AnvilWorkbench.fbx",
+      "sourceFile": "ArtSource/Models/AnvilWorkbench.blend",
+      "sourceSha256": "de642f32ca1808d70d6950077396a876dc32a388c556768da447e162f3b3ccb4",
+      "triangles": 292,
+      "materials": [
+        {
+          "sourceName": "MT_Metal",
+          "key": "MT_Metal_868288bc7d"
+        },
+        {
+          "sourceName": "MT_Metal_Light",
+          "key": "MT_Metal_Light_114ea452f9"
+        },
+        {
+          "sourceName": "MT_Wood_Dark",
+          "key": "MT_Wood_Dark_afc67f7554"
+        },
+        {
+          "sourceName": "MT_Wood_Light",
+          "key": "MT_Wood_Light_93ec8d2085"
+        },
+        {
+          "sourceName": "MT_Wood_Main",
+          "key": "MT_Wood_Main_d2407b6c0d"
+        }
+      ]
+    },
+    {
+      "name": "Barrel",
+      "file": "Barrel.fbx",
+      "sourceFile": "ArtSource/Models/Barrel.blend",
+      "sourceSha256": "861f42897fc064ca761424085b159e101633078a8caf2e4abe5ff8fa7db6f6b2",
+      "triangles": 592,
+      "materials": [
+        {
+          "sourceName": "MT_Metal",
+          "key": "MT_Metal_868288bc7d"
+        },
+        {
+          "sourceName": "MT_Wood_Dark",
+          "key": "MT_Wood_Dark_afc67f7554"
+        },
+        {
+          "sourceName": "MT_Wood_Light",
+          "key": "MT_Wood_Light_93ec8d2085"
+        },
+        {
+          "sourceName": "MT_Wood_Main",
+          "key": "MT_Wood_Main_d2407b6c0d"
+        }
+      ]
+    },
+    {
+      "name": "CoinStack_03",
+      "file": "CoinStack_03.fbx",
+      "sourceFile": "ArtSource/Models/CoinStack_03.blend",
+      "sourceSha256": "9816c619eab781e6f4e07c2e21217d249fbb25a47480cfce0a73c2a3df7aa63e",
+      "triangles": 884,
+      "materials": [
+        {
+          "sourceName": "MT_Copper_Light",
+          "key": "MT_Copper_Light_626ec3aedb"
+        },
+        {
+          "sourceName": "MT_Copper_Main",
+          "key": "MT_Copper_Main_b239b1a306"
+        },
+        {
+          "sourceName": "MT_Gold",
+          "key": "MT_Gold_234c907d1e"
+        }
+      ]
+    },
+    {
+      "name": "CoinStack_06",
+      "file": "CoinStack_06.fbx",
+      "sourceFile": "ArtSource/Models/CoinStack_06.blend",
+      "sourceSha256": "3a6eb86a23ac18991bb3236b0aa672d1dbec933f38a8d24ae714d121ce306de1",
+      "triangles": 1736,
+      "materials": [
+        {
+          "sourceName": "MT_Copper_Light",
+          "key": "MT_Copper_Light_626ec3aedb"
+        },
+        {
+          "sourceName": "MT_Copper_Main",
+          "key": "MT_Copper_Main_b239b1a306"
+        },
+        {
+          "sourceName": "MT_Gold",
+          "key": "MT_Gold_234c907d1e"
+        }
+      ]
+    },
+    {
+      "name": "CoinStack_10",
+      "file": "CoinStack_10.fbx",
+      "sourceFile": "ArtSource/Models/CoinStack_10.blend",
+      "sourceSha256": "7d263408852e794945413d3502b636603387fede67d8cb5b388ba68bef64c44b",
+      "triangles": 2872,
+      "materials": [
+        {
+          "sourceName": "MT_Copper_Light",
+          "key": "MT_Copper_Light_626ec3aedb"
+        },
+        {
+          "sourceName": "MT_Copper_Main",
+          "key": "MT_Copper_Main_b239b1a306"
+        },
+        {
+          "sourceName": "MT_Gold",
+          "key": "MT_Gold_234c907d1e"
+        }
+      ]
+    },
+    {
+      "name": "Conveyor",
+      "file": "Conveyor.fbx",
+      "sourceFile": "ArtSource/Models/Conveyor.blend",
+      "sourceSha256": "5fa63e1d18b9ce1ea9f452940c171ce5ba32fdd5aee959722b91107ff4364fdd",
+      "triangles": 1092,
+      "materials": [
+        {
+          "sourceName": "MT_Gold_Dark",
+          "key": "MT_Gold_Dark_5229305cbe"
+        },
+        {
+          "sourceName": "MT_Metal",
+          "key": "MT_Metal_868288bc7d"
+        },
+        {
+          "sourceName": "MT_Metal_Light",
+          "key": "MT_Metal_Light_114ea452f9"
+        },
+        {
+          "sourceName": "MT_Wood_Light",
+          "key": "MT_Wood_Light_93ec8d2085"
+        },
+        {
+          "sourceName": "MT_Wood_Main",
+          "key": "MT_Wood_Main_d2407b6c0d"
+        }
+      ]
+    },
+    {
+      "name": "CopperCoin",
+      "file": "CopperCoin.fbx",
+      "sourceFile": "ArtSource/Models/CopperCoin.blend",
+      "sourceSha256": "d348a426ff9d02e1a208d9a682c17557697f2313bc7fa95fd2b473b200998dd8",
+      "triangles": 316,
+      "materials": [
+        {
+          "sourceName": "MT_Copper_Light",
+          "key": "MT_Copper_Light_626ec3aedb"
+        },
+        {
+          "sourceName": "MT_Copper_Main",
+          "key": "MT_Copper_Main_b239b1a306"
+        },
+        {
+          "sourceName": "MT_Gold",
+          "key": "MT_Gold_234c907d1e"
+        }
+      ]
+    },
+    {
+      "name": "CopperIngot",
+      "file": "CopperIngot.fbx",
+      "sourceFile": "ArtSource/Models/CopperIngot.blend",
+      "sourceSha256": "6def03d41dc3ad04787607128f8b1e184fbc9337169fd180b567a830a6d348e6",
+      "triangles": 44,
+      "materials": [
+        {
+          "sourceName": "MT_Copper_Main",
+          "key": "MT_Copper_Main_b239b1a306"
+        }
+      ]
+    },
+    {
+      "name": "CopperMine",
+      "file": "CopperMine.fbx",
+      "sourceFile": "ArtSource/Models/CopperMine.blend",
+      "sourceSha256": "40fb4660504d8e7183cfe73e8c0c9f3225805999126805ebdd8ec1d1a9eafd8e",
+      "triangles": 2036,
+      "materials": [
+        {
+          "sourceName": "MT_Cave_Dark",
+          "key": "MT_Cave_Dark_61d4deeed1"
+        },
+        {
+          "sourceName": "MT_Copper_Dark",
+          "key": "MT_Copper_Dark_560c729da9"
+        },
+        {
+          "sourceName": "MT_Copper_Light",
+          "key": "MT_Copper_Light_626ec3aedb"
+        },
+        {
+          "sourceName": "MT_Copper_Main",
+          "key": "MT_Copper_Main_b239b1a306"
+        },
+        {
+          "sourceName": "MT_Dirt_Light",
+          "key": "MT_Dirt_Light_e23f911f3f"
+        },
+        {
+          "sourceName": "MT_Fire_Yellow",
+          "key": "MT_Fire_Yellow_acce7f6c13"
+        },
+        {
+          "sourceName": "MT_Gold",
+          "key": "MT_Gold_234c907d1e"
+        },
+        {
+          "sourceName": "MT_Gold.001",
+          "key": "MT_Gold_234c907d1e"
+        },
+        {
+          "sourceName": "MT_Gold_Dark",
+          "key": "MT_Gold_Dark_5229305cbe"
+        },
+        {
+          "sourceName": "MT_Grass",
+          "key": "MT_Grass_e07f699786"
+        },
+        {
+          "sourceName": "MT_Metal_Light",
+          "key": "MT_Metal_Light_114ea452f9"
+        },
+        {
+          "sourceName": "MT_Stone_Dark",
+          "key": "MT_Stone_Dark_2257e5e587"
+        },
+        {
+          "sourceName": "MT_Stone_Dark.001",
+          "key": "MT_Stone_Dark_2257e5e587"
+        },
+        {
+          "sourceName": "MT_Stone_Dark.002",
+          "key": "MT_Stone_Dark_2257e5e587"
+        },
+        {
+          "sourceName": "MT_Stone_Dark.003",
+          "key": "MT_Stone_Dark_2257e5e587"
+        },
+        {
+          "sourceName": "MT_Stone_Dark.004",
+          "key": "MT_Stone_Dark_2257e5e587"
+        },
+        {
+          "sourceName": "MT_Stone_Dark.005",
+          "key": "MT_Stone_Dark_2257e5e587"
+        },
+        {
+          "sourceName": "MT_Stone_Dark.006",
+          "key": "MT_Stone_Dark_2257e5e587"
+        },
+        {
+          "sourceName": "MT_Stone_Dark.007",
+          "key": "MT_Stone_Dark_2257e5e587"
+        },
+        {
+          "sourceName": "MT_Stone_Light",
+          "key": "MT_Stone_Light_b063f7fabe"
+        },
+        {
+          "sourceName": "MT_Stone_Light.001",
+          "key": "MT_Stone_Light_b063f7fabe"
+        },
+        {
+          "sourceName": "MT_Stone_Light.002",
+          "key": "MT_Stone_Light_b063f7fabe"
+        },
+        {
+          "sourceName": "MT_Stone_Light.003",
+          "key": "MT_Stone_Light_b063f7fabe"
+        },
+        {
+          "sourceName": "MT_Stone_Light.004",
+          "key": "MT_Stone_Light_b063f7fabe"
+        },
+        {
+          "sourceName": "MT_Stone_Light.005",
+          "key": "MT_Stone_Light_b063f7fabe"
+        },
+        {
+          "sourceName": "MT_Stone_Light.006",
+          "key": "MT_Stone_Light_b063f7fabe"
+        },
+        {
+          "sourceName": "MT_Stone_Light.007",
+          "key": "MT_Stone_Light_b063f7fabe"
+        },
+        {
+          "sourceName": "MT_Stone_Main",
+          "key": "MT_Stone_Main_d13ace1d10"
+        },
+        {
+          "sourceName": "MT_Stone_Main.001",
+          "key": "MT_Stone_Main_d13ace1d10"
+        },
+        {
+          "sourceName": "MT_Stone_Main.002",
+          "key": "MT_Stone_Main_d13ace1d10"
+        },
+        {
+          "sourceName": "MT_Stone_Main.003",
+          "key": "MT_Stone_Main_d13ace1d10"
+        },
+        {
+          "sourceName": "MT_Stone_Main.004",
+          "key": "MT_Stone_Main_d13ace1d10"
+        },
+        {
+          "sourceName": "MT_Stone_Main.005",
+          "key": "MT_Stone_Main_d13ace1d10"
+        },
+        {
+          "sourceName": "MT_Stone_Main.006",
+          "key": "MT_Stone_Main_d13ace1d10"
+        },
+        {
+          "sourceName": "MT_Stone_Main.007",
+          "key": "MT_Stone_Main_d13ace1d10"
+        },
+        {
+          "sourceName": "MT_Wood_Dark",
+          "key": "MT_Wood_Dark_afc67f7554"
+        },
+        {
+          "sourceName": "MT_Wood_Light",
+          "key": "MT_Wood_Light_93ec8d2085"
+        },
+        {
+          "sourceName": "MT_Wood_Main",
+          "key": "MT_Wood_Main_d2407b6c0d"
+        }
+      ]
+    },
+    {
+      "name": "CopperOre_01",
+      "file": "CopperOre_01.fbx",
+      "sourceFile": "ArtSource/Models/CopperOre_01.blend",
+      "sourceSha256": "f64cf5b1a4346550c064f413f168b825d2874bd001cbfaefc59b80e7613fd422",
+      "triangles": 60,
+      "materials": [
+        {
+          "sourceName": "MT_Copper_Dark",
+          "key": "MT_Copper_Dark_560c729da9"
+        },
+        {
+          "sourceName": "MT_Copper_Light",
+          "key": "MT_Copper_Light_626ec3aedb"
+        },
+        {
+          "sourceName": "MT_Copper_Main",
+          "key": "MT_Copper_Main_b239b1a306"
+        }
+      ]
+    },
+    {
+      "name": "CopperOre_02",
+      "file": "CopperOre_02.fbx",
+      "sourceFile": "ArtSource/Models/CopperOre_02.blend",
+      "sourceSha256": "809a8a6b4e70f56cfa4328f97d922449f851da2446185489ed9c8fd15396e58e",
+      "triangles": 60,
+      "materials": [
+        {
+          "sourceName": "MT_Copper_Dark",
+          "key": "MT_Copper_Dark_560c729da9"
+        },
+        {
+          "sourceName": "MT_Copper_Light",
+          "key": "MT_Copper_Light_626ec3aedb"
+        },
+        {
+          "sourceName": "MT_Copper_Main",
+          "key": "MT_Copper_Main_b239b1a306"
+        }
+      ]
+    },
+    {
+      "name": "CopperOre_03",
+      "file": "CopperOre_03.fbx",
+      "sourceFile": "ArtSource/Models/CopperOre_03.blend",
+      "sourceSha256": "9cb5c4415be19f9f4f6d311fe6fe554c8998db7a07a924c7ddb576c1673885f3",
+      "triangles": 60,
+      "materials": [
+        {
+          "sourceName": "MT_Copper_Dark",
+          "key": "MT_Copper_Dark_560c729da9"
+        },
+        {
+          "sourceName": "MT_Copper_Light",
+          "key": "MT_Copper_Light_626ec3aedb"
+        },
+        {
+          "sourceName": "MT_Copper_Main",
+          "key": "MT_Copper_Main_b239b1a306"
+        }
+      ]
+    },
+    {
+      "name": "Furnace",
+      "file": "Furnace.fbx",
+      "sourceFile": "ArtSource/Models/Furnace.blend",
+      "sourceSha256": "6ff7fc9f0edf0399bb011b276858fd40e3d6a8d24edcafed7a60e72ff21b137b",
+      "triangles": 1660,
+      "materials": [
+        {
+          "sourceName": "MT_Cave_Dark",
+          "key": "MT_Cave_Dark_61d4deeed1"
+        },
+        {
+          "sourceName": "MT_Copper_Dark",
+          "key": "MT_Copper_Dark_560c729da9"
+        },
+        {
+          "sourceName": "MT_Fire_Orange",
+          "key": "MT_Fire_Orange_a1e8706551"
+        },
+        {
+          "sourceName": "MT_Fire_Yellow",
+          "key": "MT_Fire_Yellow_acce7f6c13"
+        },
+        {
+          "sourceName": "MT_Gold_Dark",
+          "key": "MT_Gold_Dark_5229305cbe"
+        },
+        {
+          "sourceName": "MT_Metal",
+          "key": "MT_Metal_868288bc7d"
+        },
+        {
+          "sourceName": "MT_Stone_Dark",
+          "key": "MT_Stone_Dark_2257e5e587"
+        },
+        {
+          "sourceName": "MT_Stone_Light",
+          "key": "MT_Stone_Light_b063f7fabe"
+        },
+        {
+          "sourceName": "MT_Stone_Main",
+          "key": "MT_Stone_Main_d13ace1d10"
+        },
+        {
+          "sourceName": "MT_Wood_Light",
+          "key": "MT_Wood_Light_93ec8d2085"
+        },
+        {
+          "sourceName": "MT_Wood_Main",
+          "key": "MT_Wood_Main_d2407b6c0d"
+        }
+      ]
+    },
+    {
+      "name": "MintPress",
+      "file": "MintPress.fbx",
+      "sourceFile": "ArtSource/Models/MintPress.blend",
+      "sourceSha256": "f21ffe1b60ab3f370fe8170afa2e64c04c02ed3ca7c6332741826b2563fb3670",
+      "triangles": 1992,
+      "materials": [
+        {
+          "sourceName": "MT_Copper_Dark",
+          "key": "MT_Copper_Dark_560c729da9"
+        },
+        {
+          "sourceName": "MT_Copper_Light",
+          "key": "MT_Copper_Light_626ec3aedb"
+        },
+        {
+          "sourceName": "MT_Copper_Main",
+          "key": "MT_Copper_Main_b239b1a306"
+        },
+        {
+          "sourceName": "MT_Gold",
+          "key": "MT_Gold_234c907d1e"
+        },
+        {
+          "sourceName": "MT_Gold_Dark",
+          "key": "MT_Gold_Dark_5229305cbe"
+        },
+        {
+          "sourceName": "MT_Metal",
+          "key": "MT_Metal_868288bc7d"
+        },
+        {
+          "sourceName": "MT_Metal_Light",
+          "key": "MT_Metal_Light_114ea452f9"
+        },
+        {
+          "sourceName": "MT_Stone_Dark",
+          "key": "MT_Stone_Dark_2257e5e587"
+        },
+        {
+          "sourceName": "MT_Wood_Light",
+          "key": "MT_Wood_Light_93ec8d2085"
+        },
+        {
+          "sourceName": "MT_Wood_Main",
+          "key": "MT_Wood_Main_d2407b6c0d"
+        }
+      ]
+    },
+    {
+      "name": "OrderSign",
+      "file": "OrderSign.fbx",
+      "sourceFile": "ArtSource/Models/OrderSign.blend",
+      "sourceSha256": "bbf919f956f7d7a9216f86e87cff68704b20a2687d9a22b1914414b2301ff383",
+      "triangles": 584,
+      "materials": [
+        {
+          "sourceName": "MT_Copper_Light",
+          "key": "MT_Copper_Light_626ec3aedb"
+        },
+        {
+          "sourceName": "MT_Copper_Main",
+          "key": "MT_Copper_Main_b239b1a306"
+        },
+        {
+          "sourceName": "MT_Cream",
+          "key": "MT_Cream_101ccb1aad"
+        },
+        {
+          "sourceName": "MT_Gold",
+          "key": "MT_Gold_234c907d1e"
+        },
+        {
+          "sourceName": "MT_Metal",
+          "key": "MT_Metal_868288bc7d"
+        },
+        {
+          "sourceName": "MT_Wood_Dark",
+          "key": "MT_Wood_Dark_afc67f7554"
+        },
+        {
+          "sourceName": "MT_Wood_Light",
+          "key": "MT_Wood_Light_93ec8d2085"
+        },
+        {
+          "sourceName": "MT_Wood_Main",
+          "key": "MT_Wood_Main_d2407b6c0d"
+        }
+      ]
+    },
+    {
+      "name": "PlayerCharacter_Stickman",
+      "file": "PlayerCharacter_Stickman.fbx",
+      "sourceFile": "ArtSource/Models/PlayerCharacter_Stickman.blend",
+      "sourceSha256": "3e1ba86aa95d071f519bdd82621b865b1c9f244d6f8b7d3aa14cceb9a411ce45",
+      "triangles": 2764,
+      "materials": [
+        {
+          "sourceName": "MT_Stickman_Blue",
+          "key": "MT_Stickman_Blue_43330aa5ad"
+        },
+        {
+          "sourceName": "MT_Stickman_Cream",
+          "key": "MT_Stickman_Cream_4b439fe092"
+        },
+        {
+          "sourceName": "MT_Stickman_Eyes",
+          "key": "MT_Stickman_Eyes_31806952a1"
+        },
+        {
+          "sourceName": "MT_Stickman_ToolEdge",
+          "key": "MT_Stickman_ToolEdge_dc23cc944a"
+        },
+        {
+          "sourceName": "MT_Stickman_ToolSteel",
+          "key": "MT_Stickman_ToolSteel_cf086d2527"
+        },
+        {
+          "sourceName": "MT_Stickman_ToolWood",
+          "key": "MT_Stickman_ToolWood_f93bd5e77e"
+        }
+      ]
+    },
+    {
+      "name": "UpgradePad",
+      "file": "UpgradePad.fbx",
+      "sourceFile": "ArtSource/Models/UpgradePad.blend",
+      "sourceSha256": "1422a9c6ec6abe37c0f89258213fe3ea6c946c47818a12f9bc1d47b2fa9725f0",
+      "triangles": 568,
+      "materials": [
+        {
+          "sourceName": "MT_Gold",
+          "key": "MT_Gold_234c907d1e"
+        },
+        {
+          "sourceName": "MT_Gold_Dark",
+          "key": "MT_Gold_Dark_5229305cbe"
+        },
+        {
+          "sourceName": "MT_Stone_Dark",
+          "key": "MT_Stone_Dark_2257e5e587"
+        },
+        {
+          "sourceName": "MT_Stone_Light",
+          "key": "MT_Stone_Light_b063f7fabe"
+        },
+        {
+          "sourceName": "MT_Stone_Main",
+          "key": "MT_Stone_Main_d13ace1d10"
+        }
+      ]
+    },
+    {
+      "name": "UpgradePad_off",
+      "file": "UpgradePad_off.fbx",
+      "sourceFile": "ArtSource/Models/UpgradePad\u00a0off.blend",
+      "sourceSha256": "6a87359a2d01585730601d95058f48a8f5aef4741df4ec385477c5e87331884d",
+      "triangles": 568,
+      "materials": [
+        {
+          "sourceName": "MT_Gold",
+          "key": "MT_Gold_39d76cc036"
+        },
+        {
+          "sourceName": "MT_Gold_Dark",
+          "key": "MT_Gold_Dark_c8e85ba0a5"
+        },
+        {
+          "sourceName": "MT_Stone_Dark",
+          "key": "MT_Stone_Dark_2257e5e587"
+        },
+        {
+          "sourceName": "MT_Stone_Light",
+          "key": "MT_Stone_Light_b063f7fabe"
+        },
+        {
+          "sourceName": "MT_Stone_Main",
+          "key": "MT_Stone_Main_d13ace1d10"
+        }
+      ]
+    },
+    {
+      "name": "WoodenCrate",
+      "file": "WoodenCrate.fbx",
+      "sourceFile": "ArtSource/Models/WoodenCrate.blend",
+      "sourceSha256": "4514c14bbd4e87e6ce03ac176da63e156b841aa2d4c6ef50a72d315fb531ef99",
+      "triangles": 544,
+      "materials": [
+        {
+          "sourceName": "MT_Metal_Light",
+          "key": "MT_Metal_Light_114ea452f9"
+        },
+        {
+          "sourceName": "MT_Metal_Light.001",
+          "key": "MT_Metal_Light_114ea452f9"
+        },
+        {
+          "sourceName": "MT_Wood_Light",
+          "key": "MT_Wood_Light_93ec8d2085"
+        },
+        {
+          "sourceName": "MT_Wood_Light.001",
+          "key": "MT_Wood_Light_93ec8d2085"
+        },
+        {
+          "sourceName": "MT_Wood_Light.002",
+          "key": "MT_Wood_Light_93ec8d2085"
+        },
+        {
+          "sourceName": "MT_Wood_Light.003",
+          "key": "MT_Wood_Light_93ec8d2085"
+        },
+        {
+          "sourceName": "MT_Wood_Main",
+          "key": "MT_Wood_Main_d2407b6c0d"
+        }
+      ]
+    },
+    {
+      "name": "WoodenFence_Corner",
+      "file": "WoodenFence_Corner.fbx",
+      "sourceFile": "ArtSource/Models/WoodenFence_Corner.blend",
+      "sourceSha256": "2b6330a3672d934237d4fe3e1604af692846d7a33630431c487f5838fd42607c",
+      "triangles": 368,
+      "materials": [
+        {
+          "sourceName": "MT_Metal_Light",
+          "key": "MT_Metal_Light_114ea452f9"
+        },
+        {
+          "sourceName": "MT_Wood_Light",
+          "key": "MT_Wood_Light_93ec8d2085"
+        },
+        {
+          "sourceName": "MT_Wood_Main",
+          "key": "MT_Wood_Main_d2407b6c0d"
+        }
+      ]
+    }
+  ],
+  "materials": [
+    {
+      "key": "MT_Metal_868288bc7d",
+      "color": [
+        0.05637409910559654,
+        0.06772459298372269,
+        0.10114516317844391,
+        1.0
+      ],
+      "roughness": 0.30000001192092896,
+      "metallic": 0.800000011920929,
+      "emission": [
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "emissionStrength": 0.0
+    },
+    {
+      "key": "MT_Metal_Light_114ea452f9",
+      "color": [
+        0.17677432298660278,
+        0.21204440295696259,
+        0.288815975189209,
+        1.0
+      ],
+      "roughness": 0.2800000011920929,
+      "metallic": 0.75,
+      "emission": [
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "emissionStrength": 0.0
+    },
+    {
+      "key": "MT_Wood_Dark_afc67f7554",
+      "color": [
+        0.16364067792892456,
+        0.04943345859646797,
+        0.01606770046055317,
+        1.0
+      ],
+      "roughness": 0.6200000047683716,
+      "metallic": 0.0,
+      "emission": [
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "emissionStrength": 0.0
+    },
+    {
+      "key": "MT_Wood_Light_93ec8d2085",
+      "color": [
+        0.6730490922927856,
+        0.2590273320674896,
+        0.05637409910559654,
+        1.0
+      ],
+      "roughness": 0.5199999809265137,
+      "metallic": 0.0,
+      "emission": [
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "emissionStrength": 0.0
+    },
+    {
+      "key": "MT_Wood_Main_d2407b6c0d",
+      "color": [
+        0.4045408368110657,
+        0.13035227358341217,
+        0.02775527909398079,
+        1.0
+      ],
+      "roughness": 0.5799999833106995,
+      "metallic": 0.0,
+      "emission": [
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "emissionStrength": 0.0
+    },
+    {
+      "key": "MT_Copper_Light_626ec3aedb",
+      "color": [
+        1.0,
+        0.36859092116355896,
+        0.0697270855307579,
+        1.0
+      ],
+      "roughness": 0.25,
+      "metallic": 0.5799999833106995,
+      "emission": [
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "emissionStrength": 0.0
+    },
+    {
+      "key": "MT_Copper_Main_b239b1a306",
+      "color": [
+        0.6940805315971375,
+        0.1801442950963974,
+        0.03155139088630676,
+        1.0
+      ],
+      "roughness": 0.2800000011920929,
+      "metallic": 0.6499999761581421,
+      "emission": [
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "emissionStrength": 0.0
+    },
+    {
+      "key": "MT_Gold_234c907d1e",
+      "color": [
+        1.0,
+        0.6186857223510742,
+        0.05112205073237419,
+        1.0
+      ],
+      "roughness": 0.2199999988079071,
+      "metallic": 0.7799999713897705,
+      "emission": [
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "emissionStrength": 0.0
+    },
+    {
+      "key": "MT_Gold_Dark_5229305cbe",
+      "color": [
+        0.4936161935329437,
+        0.19751642644405365,
+        0.010397802107036114,
+        1.0
+      ],
+      "roughness": 0.3199999928474426,
+      "metallic": 0.6200000047683716,
+      "emission": [
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "emissionStrength": 0.0
+    },
+    {
+      "key": "MT_Cave_Dark_61d4deeed1",
+      "color": [
+        0.017936432734131813,
+        0.01606770046055317,
+        0.02899118699133396,
+        1.0
+      ],
+      "roughness": 0.949999988079071,
+      "metallic": 0.0,
+      "emission": [
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "emissionStrength": 0.0
+    },
+    {
+      "key": "MT_Copper_Dark_560c729da9",
+      "color": [
+        0.3203815519809723,
+        0.05284162610769272,
+        0.011126082390546799,
+        1.0
+      ],
+      "roughness": 0.3400000035762787,
+      "metallic": 0.47999998927116394,
+      "emission": [
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "emissionStrength": 0.0
+    },
+    {
+      "key": "MT_Dirt_Light_e23f911f3f",
+      "color": [
+        0.7372047901153564,
+        0.4045408368110657,
+        0.14497213065624237,
+        1.0
+      ],
+      "roughness": 0.8500000238418579,
+      "metallic": 0.0,
+      "emission": [
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "emissionStrength": 0.0
+    },
+    {
+      "key": "MT_Fire_Yellow_acce7f6c13",
+      "color": [
+        1.0,
+        0.6592239737510681,
+        0.07382776588201523,
+        1.0
+      ],
+      "roughness": 0.30000001192092896,
+      "metallic": 0.0,
+      "emission": [
+        1.0,
+        0.6592239737510681,
+        0.07382776588201523,
+        1.0
+      ],
+      "emissionStrength": 3.4000000953674316
+    },
+    {
+      "key": "MT_Grass_e07f699786",
+      "color": [
+        0.17343904078006744,
+        0.5295231938362122,
+        0.058187179267406464,
+        1.0
+      ],
+      "roughness": 0.699999988079071,
+      "metallic": 0.0,
+      "emission": [
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "emissionStrength": 0.0
+    },
+    {
+      "key": "MT_Stone_Dark_2257e5e587",
+      "color": [
+        0.08919350802898407,
+        0.08919350802898407,
+        0.12474094331264496,
+        1.0
+      ],
+      "roughness": 0.8299999833106995,
+      "metallic": 0.0,
+      "emission": [
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "emissionStrength": 0.0
+    },
+    {
+      "key": "MT_Stone_Light_b063f7fabe",
+      "color": [
+        0.5054324865341187,
+        0.45907989144325256,
+        0.43681275844573975,
+        1.0
+      ],
+      "roughness": 0.7799999713897705,
+      "metallic": 0.0,
+      "emission": [
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "emissionStrength": 0.0
+    },
+    {
+      "key": "MT_Stone_Main_d13ace1d10",
+      "color": [
+        0.2508402466773987,
+        0.23882798850536346,
+        0.288815975189209,
+        1.0
+      ],
+      "roughness": 0.800000011920929,
+      "metallic": 0.0,
+      "emission": [
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "emissionStrength": 0.0
+    },
+    {
+      "key": "MT_Fire_Orange_a1e8706551",
+      "color": [
+        1.0,
+        0.2590273320674896,
+        0.006040593609213829,
+        1.0
+      ],
+      "roughness": 0.3499999940395355,
+      "metallic": 0.0,
+      "emission": [
+        1.0,
+        0.2590273320674896,
+        0.006040593609213829,
+        1.0
+      ],
+      "emissionStrength": 2.799999952316284
+    },
+    {
+      "key": "MT_Cream_101ccb1aad",
+      "color": [
+        0.9157501459121704,
+        0.8122414946556091,
+        0.6120656132698059,
+        1.0
+      ],
+      "roughness": 0.6200000047683716,
+      "metallic": 0.0,
+      "emission": [
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "emissionStrength": 0.0
+    },
+    {
+      "key": "MT_Stickman_Blue_43330aa5ad",
+      "color": [
+        0.016988052055239677,
+        0.12198571115732193,
+        0.4819522500038147,
+        1.0
+      ],
+      "roughness": 0.550000011920929,
+      "metallic": 0.0,
+      "emission": [
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "emissionStrength": 0.0
+    },
+    {
+      "key": "MT_Stickman_Cream_4b439fe092",
+      "color": [
+        0.9157501459121704,
+        0.8122414946556091,
+        0.6120656132698059,
+        1.0
+      ],
+      "roughness": 0.6399999856948853,
+      "metallic": 0.0,
+      "emission": [
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "emissionStrength": 0.0
+    },
+    {
+      "key": "MT_Stickman_Eyes_31806952a1",
+      "color": [
+        0.005028203595429659,
+        0.006584957242012024,
+        0.011881334707140923,
+        1.0
+      ],
+      "roughness": 0.47999998927116394,
+      "metallic": 0.0,
+      "emission": [
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "emissionStrength": 0.0
+    },
+    {
+      "key": "MT_Stickman_ToolEdge_dc23cc944a",
+      "color": [
+        0.05637409910559654,
+        0.06772459298372269,
+        0.10114516317844391,
+        1.0
+      ],
+      "roughness": 0.36000001430511475,
+      "metallic": 0.5,
+      "emission": [
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "emissionStrength": 0.0
+    },
+    {
+      "key": "MT_Stickman_ToolSteel_cf086d2527",
+      "color": [
+        0.17677432298660278,
+        0.21204440295696259,
+        0.288815975189209,
+        1.0
+      ],
+      "roughness": 0.3100000023841858,
+      "metallic": 0.550000011920929,
+      "emission": [
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "emissionStrength": 0.0
+    },
+    {
+      "key": "MT_Stickman_ToolWood_f93bd5e77e",
+      "color": [
+        0.4045408368110657,
+        0.13035227358341217,
+        0.02775527909398079,
+        1.0
+      ],
+      "roughness": 0.6000000238418579,
+      "metallic": 0.0,
+      "emission": [
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "emissionStrength": 0.0
+    },
+    {
+      "key": "MT_Gold_39d76cc036",
+      "color": [
+        0.053752414882183075,
+        0.04960188269615173,
+        0.038300521671772,
+        1.0
+      ],
+      "roughness": 0.2199999988079071,
+      "metallic": 0.7799999713897705,
+      "emission": [
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "emissionStrength": 0.0
+    },
+    {
+      "key": "MT_Gold_Dark_c8e85ba0a5",
+      "color": [
+        0.0002679518365766853,
+        0.0,
+        0.0013413146371021867,
+        1.0
+      ],
+      "roughness": 0.3199999928474426,
+      "metallic": 0.6200000047683716,
+      "emission": [
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "emissionStrength": 0.0
+    }
+  ]
+}

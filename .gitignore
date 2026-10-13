@@ -34,3 +34,8 @@ sysinfo.txt
 *.stacktrace
 *.orig
 *.tmp
+
+# Blender's local save-history copies are retained on disk, outside portfolio history.
+*.blend[0-9]
+*.blend[0-9].meta
+/ArtSource/**/*.meta

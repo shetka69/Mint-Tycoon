@@ -15,4 +15,9 @@ MonoBehaviour:
   type: 0
   displayName: Copper Ore
   icon: {fileID: 0}
-  stackVisualPrefab: {fileID: 607561946660883070, guid: 32ea9c9ae92124975ab53e9995b7b9b1, type: 3}
+  stackVisualPrefab: {fileID: 3874206228874842998, guid: f7cef927c84d04ca4afd159e92992f3a, type: 3}
+  stackVisualVariants:
+  - {fileID: 3874206228874842998, guid: f7cef927c84d04ca4afd159e92992f3a, type: 3}
+  - {fileID: 3767149900557042748, guid: f7cb6295a7f7d462b862e3fef42f0407, type: 3}
+  - {fileID: 4181309405663862608, guid: bf479d85cbe4a4022961b37704840b7d, type: 3}
+  stackRowSpacing: 0.24

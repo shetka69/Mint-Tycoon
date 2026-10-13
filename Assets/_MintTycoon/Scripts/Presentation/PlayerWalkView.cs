@@ -14,7 +14,18 @@ namespace MintTycoon.Presentation
         private Vector3 restPosition;
         private float phase;
         private float blend;
-        private void OnEnable() { lastPosition = transform.position; if (visualRoot != null) restPosition = visualRoot.localPosition; }
+        private Quaternion leftArmRest, rightArmRest, leftLegRest, rightLegRest;
+        private void OnEnable() => CachePose();
+        private void Start() => CachePose();
+        private void CachePose()
+        {
+            lastPosition = transform.position;
+            if (visualRoot != null) restPosition = visualRoot.localPosition;
+            if (leftArm != null) leftArmRest = leftArm.localRotation;
+            if (rightArm != null) rightArmRest = rightArm.localRotation;
+            if (leftLeg != null) leftLegRest = leftLeg.localRotation;
+            if (rightLeg != null) rightLegRest = rightLeg.localRotation;
+        }
         private void LateUpdate()
         {
             Vector3 delta = transform.position - lastPosition;
@@ -25,9 +36,14 @@ namespace MintTycoon.Presentation
             phase += delta.magnitude * 5.5f;
             float swing = Mathf.Sin(phase) * 24f * blend;
             if (visualRoot != null) visualRoot.localPosition = restPosition + Vector3.up * (Mathf.Abs(Mathf.Sin(phase)) * 0.045f * blend);
-            SetSwing(leftArm, -swing); SetSwing(rightArm, swing);
-            SetSwing(leftLeg, swing); SetSwing(rightLeg, -swing);
+            SetSwing(leftArm, leftArmRest, -swing); SetSwing(rightArm, rightArmRest, swing);
+            SetSwing(leftLeg, leftLegRest, swing); SetSwing(rightLeg, rightLegRest, -swing);
         }
-        private static void SetSwing(Transform limb, float angle) { if (limb != null) limb.localRotation = Quaternion.Euler(angle, 0f, 0f); }
+        private void SetSwing(Transform limb, Quaternion rest, float angle)
+        {
+            if (limb == null || limb.parent == null) return;
+            Vector3 axis = limb.parent.InverseTransformDirection(transform.right);
+            limb.localRotation = Quaternion.AngleAxis(angle, axis) * rest;
+        }
     }
 }

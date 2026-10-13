@@ -100,3 +100,15 @@
 **Validation:** Unity compiled the runtime and Editor scripts, executed the presentation setup, and rendered the portrait scene. An automated Play Mode walkthrough moved the CharacterController between the real interaction pads: 12 ore were collected, 12 ingots were produced and picked up, 12 coins were picked up and delivered, the first order awarded 50 gold, and conveyor purchase left 10 gold. It confirmed matching resource types, hint fade, guide movement, press movement, live smoke particles, audio-source playback, and the final conveyor-unlocked hint. The temporary walkthrough tool was removed after recording the result; the saved scene starts with an empty inventory and the first order.
 
 **Remaining:** Device/WebGL performance, browser audio activation, playable-ad packaging, and final sound mixing belong to Stage 10.
+
+## Stage 9 update — Artist model import and placement
+
+**Date:** 2026-10-13
+
+- Inspected twenty supplied Blender models, their hierarchy, geometry, material colours, and dimensions. Preserved original source bytes and moved the authoring folder to `ArtSource/Models` so opening the Unity project does not require Blender. Local `.blend1` history and raw-source metadata remain on disk outside Git.
+- Added a reproducible FBX exporter, a source/material manifest, Unity importer setup, 27 shared URP materials, and twenty normalized visual prefabs. Studio floors, preview cameras/lights, and example furnace-tray stock are excluded from game exports.
+- Replaced the station, worker, resource, conveyor, upgrade, and order-sign presentation; placed crates, barrels, fences, and the anvil workbench near their corresponding work areas. The original gameplay roots, configurations, and interaction zones stay in use.
+- Prepared a relaxed worker pose in the export, preserved imported rest rotations during walking, and adapted press travel to the imported parent axes. Added real-order-driven wagon cargo and locked/unlocked upgrade visuals. Reduced the pad's vertical scale, added its walk surface, and raised the world guide above it.
+- Added ore visual variants and resource-specific stack spacing while retaining the six-model inventory display limit. Kept the temporary ground for the forthcoming tile set.
+
+**Validation:** Unity imported all twenty FBX models and compiled the runtime/Editor scripts. All twenty visual prefabs use URP materials and contain no studio objects. A Play Mode walkthrough used CharacterController movement along clear routes around the new station body colliders: collected 12 ore, produced and picked up 12 ingots, picked up and delivered 12 coins, earned 50 gold, and retained 10 after conveyor purchase. It confirmed six carried models, correct resource types, worker walk motion, vertical press motion, furnace smoke, wagon cargo, upgraded pad visibility, standing on the pad, hint fade, and the guide above the raised pad. All original `.blend` hashes matched the export manifest. The temporary review tool was removed after validation.

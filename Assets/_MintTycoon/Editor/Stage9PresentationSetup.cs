@@ -23,6 +23,11 @@ namespace MintTycoon.Editor
         public static void SetUp()
         {
             if (EditorApplication.isPlaying) throw new System.InvalidOperationException("Stop Play Mode before rebuilding presentation.");
+            if (AssetDatabase.LoadAssetAtPath<GameObject>(GameModelImportSetup.PrefabFolder + "/Furnace.prefab") != null)
+            {
+                ImportedModelSceneSetup.SetUp();
+                return;
+            }
             Scene scene = EditorSceneManager.OpenScene(RootPath + "/Scenes/MintTycoon_Greybox.unity", OpenSceneMode.Single);
             EnsureFolder(RootPath + "/Art/Models");
             EnsureFolder(RootPath + "/Art/Materials/Presentation");

@@ -67,9 +67,10 @@ namespace MintTycoon.Production
             {
                 int column = index % 3;
                 int row = index / 3;
-                GameObject item = Instantiate(definition.StackVisualPrefab, anchor);
+                GameObject item = Instantiate(definition.GetStackVisual(index), anchor);
                 item.name = $"{namePrefix} {index + 1}";
-                item.transform.localPosition = new Vector3((column - 1) * 0.32f, row * 0.2f, 0f);
+                float rowSpacing = definition.StackRowSpacing > 0f ? definition.StackRowSpacing : 0.2f;
+                item.transform.localPosition = new Vector3((column - 1) * 0.32f, row * rowSpacing, 0f);
                 item.transform.localRotation = Quaternion.identity;
                 spawnedItems.Add(item);
             }

@@ -34,9 +34,10 @@ namespace MintTycoon.Presentation
             if (ram != null)
             {
                 float stroke = active ? Mathf.Pow(Mathf.Sin(station.CycleProgress * Mathf.PI), 2f) : 0f;
-                ram.localPosition = restPosition + Vector3.down * (stroke * ramTravel);
+                Vector3 down = ram.parent != null ? ram.parent.InverseTransformVector(-transform.up) : Vector3.down;
+                ram.localPosition = restPosition + down * (stroke * ramTravel);
             }
-            if (flywheel != null && active) flywheel.Rotate(Vector3.up, 300f * Time.deltaTime, Space.Self);
+            if (flywheel != null && active) flywheel.Rotate(transform.up, 300f * Time.deltaTime, Space.World);
         }
         private void HandleCycle()
         {

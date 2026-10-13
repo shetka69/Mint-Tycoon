@@ -26,6 +26,8 @@ namespace MintTycoon.Tutorial
         [SerializeField] private Transform[] stepTargets;
         [SerializeField] private Transform deliveryTarget;
         [SerializeField, Min(0.5f)] private float hintDuration = 3.5f;
+        [SerializeField] private float markerHeight = 0.29f;
+        [SerializeField] private float upgradeMarkerHeight = 0.29f;
 
         private int currentStep;
         private float hintRemaining;
@@ -67,7 +69,7 @@ namespace MintTycoon.Tutorial
                 return;
             // Pads have elevated trigger centers; the guide stays on the ground.
             Vector3 position = activeTarget.position;
-            guideMarker.position = new Vector3(position.x, 0.29f, position.z);
+            guideMarker.position = new Vector3(position.x, currentStep == 6 ? upgradeMarkerHeight : markerHeight, position.z);
             guideMarker.localScale = Vector3.one * (1f + Mathf.Sin(Time.time * 3.5f) * 0.07f);
         }
 
