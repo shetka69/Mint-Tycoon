@@ -38,7 +38,7 @@ namespace MintTycoon.Editor
             EditorSceneManager.MarkSceneDirty(scene); EditorSceneManager.SaveScene(scene); AssetDatabase.SaveAssets();
             Directory.CreateDirectory("Temp/NewObjects");
             File.WriteAllText("Temp/NewObjects/import_report.txt", string.Join("\n", manifest.models.Select(m => $"{m.name}: {m.gameTriangles} triangles, normalized prefab and URP materials")));
-            Selection.activeTransform = Require("Royal Wagon").Find("New Object Visuals");
+            Selection.activeTransform = Require("Royal Wagon").Find("Artist Telega") ?? Require("Royal Wagon").Find("New Object Visuals");
             SceneView.lastActiveSceneView?.FrameSelected();
             Debug.Log("Mint Tycoon: new mine, furnace, coin, copper ore, and wagon saved; earlier visuals retained inactive.");
         }
@@ -123,8 +123,8 @@ namespace MintTycoon.Editor
             if (sparks != null) sparks.position = bounds.center + new Vector3(0f, -bounds.size.y * 0.22f, -bounds.size.z * 0.25f);
             ConfigureBody(furnace, new Vector3(0f, bounds.size.y * 0.5f + 0.15f, 0f), new Vector3(bounds.size.x * 0.9f, bounds.size.y, bounds.size.z * 0.85f));
             ConfigureBody(mine, new Vector3(0f, 1.4f, 0.55f), new Vector3(2.7f, 2.5f, 1.05f));
-            Transform cart = Replace(wagon, "Wagon");
-            ConfigureCart(wagon, cart);
+            if (AssetDatabase.LoadAssetAtPath<GameObject>(TelegaSceneSetup.PrefabPath) != null) TelegaSceneSetup.ApplyToScene();
+            else { Transform cart = Replace(wagon, "Wagon"); ConfigureCart(wagon, cart); }
             foreach (Transform t in Object.FindObjectsByType<Transform>(FindObjectsInactive.Include))
             {
                 if (!PrefabUtility.IsPartOfPrefabInstance(t)) continue;

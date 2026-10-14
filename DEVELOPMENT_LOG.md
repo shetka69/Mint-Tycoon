@@ -134,3 +134,14 @@
 - Exported 1024-pixel wagon textures; original 4K maps remain locally, excluded from Git. Configured its authored wheel axes and rebased live order cargo and sign onto the new wagon. Existing recipes, transfer triggers, rewards, controller, and map layout remain in use.
 
 **Editor import:** Unity compiled the scripts and executed both integration menus without new errors. The standing prefab now uses the supplied Idle and its shared humanoid avatar, with a 1.6-metre height and feet below the body. The Scene view shows the mine entrance facing its pad, the textured forge, and the textured wagon with its retained live order sign. Five generated visual prefabs and resource mappings were saved. No additional gameplay tests or device runs were added.
+
+## Stage 9 update — Independent artist Telega
+
+**Date:** 2026-10-14
+
+- Integrated the supplied material-corrected Telega as a reusable prefab with 31 meshes, three shared materials, authored wood on UV channel 1, and texture imports capped at 1024 pixels. Preserved the original FBX, images, Blender sources, and previous cart assets.
+- Exported an explicitly triangulated game FBX (3,572 triangles), preserving both UV layers instead of regenerating lightmap UVs. Grouped the four rims and their hub parts under dedicated wheel pivots; measured wheel radii from the model and corrected rotation direction. Added small chassis suspension driven by real travel distance, with cargo moving with the bed.
+- Detached the complete delivery pad, trigger, borders and order sign to an independent stationary `Royal Delivery Station` root, retaining their world positions and references. `Royal Wagon` keeps its existing route, order state, receiver, and active cargo. Unpacked its scene instance to permit detachment; the original gameplay prefab asset remains unchanged.
+- Updated presentation/HUD setup helpers to preserve the new cart and resolve the stationary sign and delivery zone. Retained the user's existing map, mine-scale, camera and sign placement edits in the saved scene.
+
+**Editor import:** Unity 6000.6.5f1 compiled the scripts and ran the cart integration in batch mode, saved the prefab and scene, and exited successfully. The setup completed with four wheel pivots, the stationary station root and retained order references. No additional gameplay tests or device runs were added.

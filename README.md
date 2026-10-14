@@ -87,6 +87,10 @@ The mine, furnace, wagon, copper ore, and coin now use the supplied `Assets/Obj`
 
 Use **Mint Tycoon → Art → Import and Place New Objects** to apply these models in the open scene. See [new object workflow](Assets/Obj/README.md) for regeneration and source preservation. The tile-map foundation remains temporary.
 
+## Independent artist cart
+
+The active wagon now uses the supplied Telega model with its authored wood UV layout. Four wheel assemblies roll from travel distance and the chassis has subtle suspension. The cart moves independently: its delivery pad, trigger and order sign remain on the stationary **Royal Delivery Station** root, while **Royal Wagon** follows the existing order route with its cargo. Previous cart models remain available inactive. Use **Mint Tycoon → Art → Set Up Independent Telega** to rebuild this integration. See [cart workflow](Assets/_MintTycoon/Art/Models/Telega/README.md).
+
 ## Development order
 
 1. Project foundation and architecture.

@@ -171,6 +171,7 @@ namespace MintTycoon.Editor
         }
         private static void ConfigureWagon(Transform wagon)
         {
+            if (AssetDatabase.LoadAssetAtPath<GameObject>(TelegaSceneSetup.PrefabPath) != null) { TelegaSceneSetup.ApplyToScene(); return; }
             Transform previous = wagon.Find("Imported Order Sign"); if (previous != null) Object.DestroyImmediate(previous.gameObject);
             Transform signModel = Instantiate("OrderSign", wagon, new Vector3(0f, 0.80f, -0.56f)); signModel.name = "Imported Order Sign";
             Transform display = Find(signModel, "Order_Display_Surface");

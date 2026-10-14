@@ -50,7 +50,7 @@ namespace MintTycoon.Editor
             SerializedObject orderData = new SerializedObject(orderView);
             Assign(orderData, "orderProgress", order); Assign(orderData, "wallet", wallet);
             Assign(orderData, "orderTitle", null); Assign(orderData, "orderDetails", orderCounter); Assign(orderData, "goldBalance", goldCounter);
-            Assign(orderData, "wagonOrderLabel", wagon.transform.Find("Order Sign")?.GetComponent<TextMesh>());
+            Assign(orderData, "wagonOrderLabel", TelegaSceneSetup.OrderLabel(wagon.transform));
             orderData.FindProperty("compactLayout").boolValue = true;
             orderData.ApplyModifiedPropertiesWithoutUndo();
 
@@ -67,12 +67,12 @@ namespace MintTycoon.Editor
             Assign(guide, "upgrade", AssetDatabase.LoadAssetAtPath<UpgradeDefinition>("Assets/_MintTycoon/Configs/Upgrades/AutomaticIngotConveyor.asset"));
             Assign(guide, "stepLabel", null); Assign(guide, "instructionLabel", hintLabel); Assign(guide, "hintGroup", hintGroup);
             Assign(guide, "guideMarker", marker != null ? marker : GameObject.Find("Next Action Marker")?.transform);
-            Assign(guide, "deliveryTarget", wagon.transform.Find("Coin Delivery Zone"));
+            Assign(guide, "deliveryTarget", TelegaSceneSetup.DeliveryTarget(wagon.transform));
             Transform[] targets = {
                 GameObject.Find("Copper Mine").transform.Find("Mine Collection Zone"),
                 furnace.transform.Find("Input Zone"), furnace.transform.Find("Output Zone"),
                 press.transform.Find("Input Zone"), press.transform.Find("Output Zone"),
-                wagon.transform.Find("Coin Delivery Zone"), GameObject.Find("Automatic Conveyor Upgrade").transform.Find("Purchase Zone")
+                TelegaSceneSetup.DeliveryTarget(wagon.transform), GameObject.Find("Automatic Conveyor Upgrade").transform.Find("Purchase Zone")
             };
             SerializedProperty targetArray = guide.FindProperty("stepTargets");
             targetArray.arraySize = targets.Length;

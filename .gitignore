@@ -42,3 +42,10 @@ sysinfo.txt
 
 # Preserve supplied cart masters locally; portable game copies are exported at 1024px.
 /Assets/Obj/wooden-cart-01/textures/*
+
+# Local cart authoring backups and generated empty material directories.
+/Assets/Obj/Telega_FBX_ready/*.blend
+/Assets/Obj/Telega_FBX_ready/*.blend.meta
+/Assets/Obj/Telega_FBX_ready/Materials*
+/Assets/Obj/Telega*.blend
+/Assets/Obj/Telega*.blend.meta

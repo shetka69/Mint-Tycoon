@@ -1,0 +1,325 @@
+{
+  "source": "Assets/Obj/Telega_FBX_ready/Telega_materials_fixed.fbx",
+  "sourceSha256": "d0dfa7f1a0472c36c6c414c574520e5fadc9641a606b93277891329757d4648d",
+  "meshes": [
+    {
+      "name": "Cube",
+      "triangles": 12,
+      "uvLayers": [
+        "UVMap",
+        "Wood_UV"
+      ],
+      "materials": [
+        "Telega_Stylized_Wood"
+      ]
+    },
+    {
+      "name": "Cube.001",
+      "triangles": 12,
+      "uvLayers": [
+        "UVMap",
+        "Wood_UV"
+      ],
+      "materials": [
+        "Telega_Stylized_Wood"
+      ]
+    },
+    {
+      "name": "Cube.002",
+      "triangles": 12,
+      "uvLayers": [
+        "UVMap",
+        "Wood_UV"
+      ],
+      "materials": [
+        "Telega_Stylized_Wood"
+      ]
+    },
+    {
+      "name": "Cube.003",
+      "triangles": 308,
+      "uvLayers": [
+        "UVMap"
+      ],
+      "materials": [
+        "Material.008"
+      ]
+    },
+    {
+      "name": "Cube.004",
+      "triangles": 12,
+      "uvLayers": [
+        "UVMap",
+        "Wood_UV"
+      ],
+      "materials": [
+        "Telega_Stylized_Wood"
+      ]
+    },
+    {
+      "name": "Cube.005",
+      "triangles": 12,
+      "uvLayers": [
+        "UVMap",
+        "Wood_UV"
+      ],
+      "materials": [
+        "Telega_Stylized_Wood"
+      ]
+    },
+    {
+      "name": "Cube.006",
+      "triangles": 12,
+      "uvLayers": [
+        "UVMap",
+        "Wood_UV"
+      ],
+      "materials": [
+        "Telega_Stylized_Wood"
+      ]
+    },
+    {
+      "name": "Cube.007",
+      "triangles": 12,
+      "uvLayers": [
+        "UVMap",
+        "Wood_UV"
+      ],
+      "materials": [
+        "Telega_Stylized_Wood"
+      ]
+    },
+    {
+      "name": "Cube.008",
+      "triangles": 12,
+      "uvLayers": [
+        "UVMap",
+        "Wood_UV"
+      ],
+      "materials": [
+        "Telega_Stylized_Wood"
+      ]
+    },
+    {
+      "name": "Cube.009",
+      "triangles": 124,
+      "uvLayers": [
+        "UVMap"
+      ],
+      "materials": [
+        "Material.010"
+      ]
+    },
+    {
+      "name": "Cube.010",
+      "triangles": 124,
+      "uvLayers": [
+        "UVMap"
+      ],
+      "materials": [
+        "Material.009"
+      ]
+    },
+    {
+      "name": "Cube.011",
+      "triangles": 124,
+      "uvLayers": [
+        "UVMap"
+      ],
+      "materials": [
+        "Material.007"
+      ]
+    },
+    {
+      "name": "Cube.012",
+      "triangles": 308,
+      "uvLayers": [
+        "UVMap"
+      ],
+      "materials": [
+        "Material.013"
+      ]
+    },
+    {
+      "name": "Cube.013",
+      "triangles": 124,
+      "uvLayers": [
+        "UVMap"
+      ],
+      "materials": [
+        "Material.016"
+      ]
+    },
+    {
+      "name": "Cube.014",
+      "triangles": 124,
+      "uvLayers": [
+        "UVMap"
+      ],
+      "materials": [
+        "Material.017"
+      ]
+    },
+    {
+      "name": "Cube.015",
+      "triangles": 308,
+      "uvLayers": [
+        "UVMap"
+      ],
+      "materials": [
+        "Material.018"
+      ]
+    },
+    {
+      "name": "Cube.016",
+      "triangles": 124,
+      "uvLayers": [
+        "UVMap"
+      ],
+      "materials": [
+        "Material.019"
+      ]
+    },
+    {
+      "name": "Cube.017",
+      "triangles": 124,
+      "uvLayers": [
+        "UVMap"
+      ],
+      "materials": [
+        "Material.020"
+      ]
+    },
+    {
+      "name": "Cube.018",
+      "triangles": 124,
+      "uvLayers": [
+        "UVMap"
+      ],
+      "materials": [
+        "Material.021"
+      ]
+    },
+    {
+      "name": "Cube.019",
+      "triangles": 308,
+      "uvLayers": [
+        "UVMap"
+      ],
+      "materials": [
+        "Material.022"
+      ]
+    },
+    {
+      "name": "Cube.021",
+      "triangles": 12,
+      "uvLayers": [
+        "UVMap",
+        "Wood_UV"
+      ],
+      "materials": [
+        "Telega_Stylized_Wood"
+      ]
+    },
+    {
+      "name": "Cylinder",
+      "triangles": 124,
+      "uvLayers": [
+        "UVMap"
+      ],
+      "materials": [
+        "Material.006"
+      ]
+    },
+    {
+      "name": "Cylinder.001",
+      "triangles": 124,
+      "uvLayers": [
+        "UVMap"
+      ],
+      "materials": [
+        "Material.006"
+      ]
+    },
+    {
+      "name": "Cylinder.002",
+      "triangles": 124,
+      "uvLayers": [
+        "UVMap"
+      ],
+      "materials": [
+        "Material.012"
+      ]
+    },
+    {
+      "name": "Cylinder.003",
+      "triangles": 124,
+      "uvLayers": [
+        "UVMap"
+      ],
+      "materials": [
+        "Material.012"
+      ]
+    },
+    {
+      "name": "Cylinder.004",
+      "triangles": 124,
+      "uvLayers": [
+        "UVMap"
+      ],
+      "materials": [
+        "Material.012"
+      ]
+    },
+    {
+      "name": "Cylinder.005",
+      "triangles": 124,
+      "uvLayers": [
+        "UVMap"
+      ],
+      "materials": [
+        "Material.012"
+      ]
+    },
+    {
+      "name": "Cylinder.006",
+      "triangles": 124,
+      "uvLayers": [
+        "UVMap"
+      ],
+      "materials": [
+        "Material.012"
+      ]
+    },
+    {
+      "name": "Cylinder.007",
+      "triangles": 124,
+      "uvLayers": [
+        "UVMap"
+      ],
+      "materials": [
+        "Material.012"
+      ]
+    },
+    {
+      "name": "Cylinder.008",
+      "triangles": 124,
+      "uvLayers": [
+        "UVMap"
+      ],
+      "materials": [
+        "Material.012"
+      ]
+    },
+    {
+      "name": "Cylinder.009",
+      "triangles": 124,
+      "uvLayers": [
+        "UVMap"
+      ],
+      "materials": [
+        "Material.012"
+      ]
+    }
+  ]
+}
